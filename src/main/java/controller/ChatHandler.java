@@ -18,7 +18,7 @@ public class ChatHandler {
 
     @RequestMapping("/test/addingMessage")
     public String addMessage() {
-        Message m = new Message(1, "test", "test");
+        Message m = new Message("abc", "test", "test", 1);
         m.pushToDatabase();
         return "worked";
     }

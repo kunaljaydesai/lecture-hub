@@ -9,12 +9,14 @@ public class Message {
 
     private String message;
     private String author;
-    private int roomNumber;
+    private String roomName;
+    private int slideNumber;
 
-    public Message(int roomNumber, String msg, String author) {
+    public Message(String roomName, String msg, String author, int slideNumber) {
         this.message = msg;
         this.author = author;
-        this.roomNumber = roomNumber;
+        this.roomName = roomName;
+        this.slideNumber = slideNumber;
     }
 
     public void pushToDatabase() {
@@ -29,12 +31,16 @@ public class Message {
         return author;
     }
 
-    public int getRoomNumber() {
-        return roomNumber;
+    public String getRoomName() {
+        return roomName;
+    }
+
+    public int getSlideNumber() {
+        return slideNumber;
     }
 
     @Override
     public String toString() {
-        return "(" + getAuthor() + ", " + getRoomNumber() + ", " + getMessage() + ")";
+        return "(" + getAuthor() + ", " + getRoomName() + ", " + getMessage() + ", " + getSlideNumber() + ")";
     }
 }
