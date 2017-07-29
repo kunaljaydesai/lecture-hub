@@ -3,17 +3,28 @@ package controller;
 import model.Message;
 import model.Room;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
+import model.Satori;
 /**
  * Created by KunalDesai on 7/29/17.
  */
 @RestController
 public class ChatHandler {
 
-    @RequestMapping("/")
-    public String index() {
-        return "Greetings from Spring Boot!";
+    /*
+        In the parameters, given a message, author name, and room id publish the message to satori
+     */
+    @RequestMapping("/api/addMessage")
+    public String publishMessage(@RequestParam(value="msg", required=true) String message, @RequestParam(value="author", required=true) String author, @RequestParam(value="rId", required=true) String roomId) {
+        Message m = new Message(roomId, message, author);
+
+        Satori s = new Satori();
+        s.publish(m);
+
+        m.pushToDatabase();
+
+        return "worked";
     }
 
     @RequestMapping("/test/addingMessage")
@@ -29,5 +40,5 @@ public class ChatHandler {
         r.pushToDatabase();
         return "worked";
     }
-    
+
 }
