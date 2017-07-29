@@ -16,6 +16,11 @@
 
   <dependencies>
     <dependency>
+      <groupId>com.satori</groupId>
+      <artifactId>satori-rtm-sdk</artifactId>
+      <version>1.0.3</version>
+    </dependency>
+    <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
@@ -36,6 +41,16 @@
           <groupId>org.webjars</groupId>
           <artifactId>bootstrap</artifactId>
           <version>3.3.7</version>
+      </dependency>
+      <dependency>
+          <groupId>org.apache.derby</groupId>
+          <artifactId>derby</artifactId>
+          <version>10.13.1.1</version>
+      </dependency>
+      <dependency>
+          <groupId>com.vaadin.external.google</groupId>
+          <artifactId>android-json</artifactId>
+          <version>0.0.20131108.vaadin1</version>
       </dependency>
   </dependencies>
 
