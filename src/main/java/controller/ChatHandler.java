@@ -16,8 +16,9 @@ public class ChatHandler {
         In the parameters, given a message, author name, and room id publish the message to satori
      */
     @RequestMapping("/api/addMessage")
-    public String publishMessage(@RequestParam(value="msg", required=true) String message, @RequestParam(value="author", required=true) String author, @RequestParam(value="rId", required=true) String roomId) {
-        Message m = new Message(roomId, message, author);
+    public String publishMessage(@RequestParam(value="msg", required=true) String message, @RequestParam(value="author", required=true)
+            String author, @RequestParam(value="room", required=true) String roomName, @RequestParam(value="slide", required=true) int slideNum) {
+        Message m = new Message(roomName, message, author, slideNum);
 
         Satori s = new Satori();
         s.publish(m);
@@ -29,7 +30,7 @@ public class ChatHandler {
 
     @RequestMapping("/test/addingMessage")
     public String addMessage() {
-        Message m = new Message(1, "test", "test");
+        Message m = new Message("abc", "test", "test", 1);
         m.pushToDatabase();
         return "worked";
     }

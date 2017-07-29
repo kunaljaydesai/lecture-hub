@@ -69,7 +69,7 @@ public class Satori {
 
     public void publish(Message msg) {
 
-        String channel = Integer.toString(msg.getRoomNumber());
+        String channel = msg.getRoomName();
 
         // At this point, the client may not yet be connected to Satori RTM.
         // If the client is not connected, the SDK internally queues the publish request and
