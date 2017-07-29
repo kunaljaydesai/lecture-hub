@@ -14,4 +14,15 @@ public class ChatHandler {
         return "Greetings from Spring Boot!";
     }
 
+
+    public void sendSatori(String msg) {
+
+    }
+
+    public void sendDB(String msg) {
+
+    }
+
+
+
 }
