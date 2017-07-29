@@ -9,6 +9,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
+import model.Message;
+import model.Satori;
+
 @SpringBootApplication
 @ComponentScan(basePackages = {"controller"})
 public class Application {
@@ -18,6 +21,11 @@ public class Application {
     public static void main(String[] args) {
         BasicConfigurator.configure();
         SpringApplication.run(Application.class, args);
+
+        Message m = new Message("hello", "anthony");
+
+        Satori s = new Satori();
+        s.retrieveAndPublish(m);
     }
 
 }
