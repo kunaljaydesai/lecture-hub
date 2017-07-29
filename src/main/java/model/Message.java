@@ -21,7 +21,6 @@ public class Message {
         Database.addMessage(this);
     }
 
-
     public String getMessage() {
         return message;
     }
