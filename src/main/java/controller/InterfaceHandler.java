@@ -13,9 +13,8 @@ public class InterfaceHandler {
     @RequestMapping("/room")
     public ModelAndView getRoom() {
         System.out.println("Accessed room...");
-        ModelAndView model = new ModelAndView("index");
-        model.addObject("name", "angel");
-        return model;
+        ModelAndView room = new ModelAndView("index");
+        return room;
     }
 
 }
