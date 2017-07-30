@@ -8,12 +8,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- paths -->
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"></link>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../../css/style.css"/>
     <script type="text/javascript" src="../../js/main.js"> </script>
 
+
 </head>
 <body>
-    <div class="header layer-1">
+    <div class="page_header layer-1">
         <div class="logo">
             lecture-hub
         </div>
@@ -55,6 +59,17 @@
         </div>
     </div>
 
+    <div class="ui mini basic modal">
+        <div class="content" id="modal-content">
+            <div class="ui input">
+                <input id="author-name" type="text" placeholder="Your Name"></input>
+            </div>
+            <div class="ui green ok inverted button" id="join-button">
+                <i class="checkmark icon"></i>
+                Join
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

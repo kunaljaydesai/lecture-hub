@@ -22,7 +22,7 @@ body {
 /*******************************************************/
 
 
-.header {
+.page_header {
     width: 100vw;
     height: 60px;
     background: #031D4A;
@@ -170,4 +170,8 @@ input[type=text] {
 input[type=text], select {
     border: 0px;
     outline: none;
+}
+
+#modal-content {
+    text-align: center;
 }
