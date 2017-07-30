@@ -14,8 +14,10 @@ $(function() {
 
     var subscription = client.subscribe(channelName, RTM.SubscriptionMode.SIMPLE);
 
-    subscription.on("enter-connected", function () {
-        console.log("subscribed baby");
+    subscription.on('rtm/subscription/data', function (pdu) {
+        pdu.body.messages.forEach(function (msg) {
+            console.log('Got message:', msg);
+        });
     });
 
 
