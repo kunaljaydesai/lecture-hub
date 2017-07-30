@@ -81,3 +81,10 @@ target/classes/static/js/main.js
 target/classes/templates/
 target/classes/util/Application.class
 target/generated-sources/
+target/classes/controller/ChatHandler.class
+target/classes/controller/InterfaceHandler.class
+target/classes/static/
+target/classes/templates/home.html
+target/classes/util/Application.class
+target/generated-sources/
+target/maven-status/
