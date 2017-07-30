@@ -8,13 +8,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- paths -->
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"></link>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../../css/style.css"/>
     <!-- satori sdk -->
     <script src="https://satori-a.akamaihd.net/satori-rtm-sdk/v1.0.2/sdk.min.js"></script>
 </head>
 <body>
-    <div id="info"  th:attr="data-channel=${id}" style="display: none"> </div>
-    <div class="header layer-1">
+    <div id="info" th:attr="data-channel=${id}" style="display: none"> </div>
+    <div class="page_header layer-1">
         <div class="logo">
             lecture-hub
         </div>
@@ -22,7 +25,7 @@
     <div class="main-view layer-2">
         <div class="slide-show">
             <div data-index="0" class="slide-container">
-                <img class="slide" src="../../img/demo-slide.jpg"> </img>
+                <img class="slide"  th:src="@{/img/demo-slide.png}" src="../../img/demo-slide.jpg"> </img>
             </div>
             <div data-index="1" class="slide-container">
                 <img class="slide"> </img>
@@ -53,6 +56,17 @@
         </div>
     </div>
 
+    <div class="ui mini basic modal">
+        <div class="content" id="modal-content">
+            <div class="ui input">
+                <input id="author-name" type="text" placeholder="Your Name"></input>
+            </div>
+            <div class="ui green ok inverted button" id="join-button">
+                <i class="checkmark icon"></i>
+                Join
+            </div>
+        </div>
+    </div>
 
 </body>
 

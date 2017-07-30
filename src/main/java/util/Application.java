@@ -10,6 +10,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import java.sql.SQLException;
 
+import model.Message;
+import model.Satori;
+
 @SpringBootApplication
 @ComponentScan(basePackages = {"controller"})
 public class Application {
@@ -22,6 +25,7 @@ public class Application {
         db.connect();
         db.createTables();
         SpringApplication.run(Application.class, args);
+
     }
 
 }
