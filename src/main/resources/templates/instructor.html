@@ -100,8 +100,9 @@
                 <!--<input id="post-content" class="form-input" type="text" placeholder="question..."> </input>
                 <div id="chat-post" class="form-submit"> <div class="index-color"> </div> + </div>-->
                 <div class="ui action input">
-                    <input id="evelyn" class="form-input" type="text" placeholder="Type message..."></input>
-                    <button style="float: right" class="ui button">Search</button>
+                    <input id="post-subject" style="display: none"></input>
+                    <input id="post-content" class="form-input" type="text" placeholder="Type message..."></input>
+                    <button id="chat-post" style="float: right" class="ui button"> SEND </button>
                 </div>
             </div>
         </div>
@@ -113,7 +114,7 @@
         <div class="discussion-header scroll-header">
             <div class="topics-list" > FREQUENT TOPICS  </div>
         </div>
-        <div class = "all-chat">
+        <div id= "all-chat">
             <div class = "topics-container">
                 <div class = "topics-background"></div>
             	<h5 class = "topic"> Algorithms </h5>
@@ -186,5 +187,6 @@
 
 <script type="text/javascript" src="../../js/main.js"> </script>
 <script type="text/javascript" src="../../js/instructorChat.js"> </script>
+<script type="text/javascript" src="../../js/chat.js"> </script>
 
 </html>

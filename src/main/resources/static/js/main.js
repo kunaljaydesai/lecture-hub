@@ -174,13 +174,13 @@ function formHandler() {
         $post.bind({
             click: function() {
                 var MESSAGE = $("#post-content").val();
-                var SUBJECT = $("#post-subject").val();
+//                var SUBJECT = $("#post-subject").val();
                 if (!MESSAGE) {
                     notify("please enter subject and subject before posting!");
                     return;
                 }
 //               fakeThread();
-                 sendMessage(AUTHOR, SUBJECT, MESSAGE, ROOMID, SLIDENUM);
+                 sendMessage(AUTHOR, MESSAGE, ROOMID);
 //                formOut();
 //                $("#plus-sign").css("display", "block");
                 $("#post-content").val("");
@@ -189,15 +189,14 @@ function formHandler() {
         });
 }
 
-function sendMessage(author, subject, message, roomId, slideNum) {
+function sendMessage(author, message, roomId) {
         $.ajax({
             url : '/api/chat/addMessage',
             data : {
                 'msg' : message,
                 'author' : author,
                 'room' : roomId,
-                'slide' : slideNum,
-                'subject': subject
+                'slide': SLIDENUM
             },
             success: function() {
                 console.log("Succesfully sent message");

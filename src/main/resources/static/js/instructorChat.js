@@ -24,7 +24,10 @@ $(document).ready(function() {
                         optionsVal[option] = optionsVal[option] + 1;
                     } else {
                         optionsVal[option] = 1;
+                        addTopic(topic);
                     }
+                } else {
+
                 }
             });
         });
@@ -32,3 +35,16 @@ $(document).ready(function() {
         client.start();
 
 });
+
+function  addTopic(topic) {
+    var $topicCont = $("<div>", {"class": "topics-container"});
+    var $topicBg = $("<div>", {"class": "topic-background"});
+    var $topic = $("<h5>", {"class": "topic"});
+    var $topicCount = $("<h5>", {"class": "topic"}).addClass("counter");
+    $topicCount.html("1");
+
+    $topicCont.append($topicBg)
+            .append($topic)
+            .append($topicCount);
+    $("#all-chat").append($topicCont);
+}
