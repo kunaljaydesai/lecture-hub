@@ -19,7 +19,7 @@ public class ChatHandler {
 
     @RequestMapping("/api/chat/addMessage")
     public @ResponseBody Message publishMessage(@RequestParam(value="msg", required=true) String message, @RequestParam(value="author", required=true)
-            String author, @RequestParam(value="room", required=true) String roomName, @RequestParam(value="slide", required=true) int slideNum, @RequestParam(value="subject", required=false) String subject) throws Exception{
+            String author, @RequestParam(value="room", required=true) String roomName, @RequestParam(value="slide", required=false) int slideNum, @RequestParam(value="subject", required=false) String subject) throws Exception{
         Message m = new Message(roomName, message, author, slideNum, subject);
 
         boolean question = false;
