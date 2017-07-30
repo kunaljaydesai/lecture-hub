@@ -3,8 +3,7 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
-    background:radial-gradient(circle at 51% 39%,#8d9eab,#22272b) fixed;
-    color: #F0F3F4;
+    color: #D0D3D4;
 }
 
 iframe {
@@ -12,7 +11,7 @@ iframe {
 }
 
 .layer-1 {
-    z-index: 100;
+    z-index: 99;
 }
 
 .layer-2 {
@@ -127,7 +126,6 @@ iframe {
     width: 100%;
     background: white;
     opacity: 0.4;
-
 }
 
 .discussion-header {
@@ -138,6 +136,7 @@ iframe {
     line-height: 50px;
     background: transparent;
     vertical-align: middle;
+    color: black;
 }
 
 .discussion-name {
@@ -146,7 +145,8 @@ iframe {
     /*height: 100%;*/
     /*line-height: 100%;*/
     /*vertical-align: middle;*/
-    left: 15px;
+    left: -10px;
+    font-size: 20px;
 }
 
 .slide-info {
@@ -317,6 +317,7 @@ iframe {
     border-bottom: 1px solid #979797 !important;
     background: 0 !important;
     box-shadow: none;
+    background: gray;
     padding-left: 0 !important;
     margin-bottom: 5px;
 }
@@ -450,4 +451,14 @@ iframe {
     font-size: 25px;
     margin-top: 19px;
     margin-right: -73px;
+}
+
+.target {
+    background-color: black;
+    width: 19px;
+    position: absolute;
+    border-right: 3px dotted black;
+    color: black;
+    text-align: right;
+    z-index: 100;
 }
