@@ -21,8 +21,8 @@ $(function() {
             } else {
                 addThread(msg);
             }
-
-
+            addThread(msg);
+            console.log(JSON.parse(msg));
         });
     });
 

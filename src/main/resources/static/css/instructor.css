@@ -291,16 +291,9 @@ input[type=text], select {
     margin-bottom: 5px;
     height: 50px;
     width: 80px;
-}
-
-#fixedbutton2 {
-    position: fixed;
-    bottom: 0px;
-    right: 0px;
-    margin-right: 20px;
-    margin-bottom: 5px;
-    height: 50px;
-    width: 160px;
+    display: inline-block;
+    float: right;
+    width: 200px;
 }
 
 #new-question {
