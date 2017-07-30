@@ -8,7 +8,6 @@ $(function() {
     var client = new RTM(endpoint, appkey);
 
     client.on("enter-connected", function () {
-        addPost("Connected to Satori RTM!");
         console.log('Connected to Satori RTM!');
     });
 
@@ -16,7 +15,7 @@ $(function() {
 
     subscription.on('rtm/subscription/data', function (pdu) {
         pdu.body.messages.forEach(function (msg) {
-            console.log('Got message:', msg);
+            addPost(msg);
         });
     });
 
@@ -26,9 +25,16 @@ $(function() {
 
 });
 
-function addPost(text) {
-   var post = "<div>" + text + "</div>";
-   console.log(post);
-   $("#discussion-content").append(post);
+
+
+function addPost(data) {
+   var $post = $("<div>", {"class": "post-container"});
+   var $content = $("<div>", {"class": "post-content"});
+   $content.html(data.message);
+   var $author = $("<div>", {"class": "post-sender"});
+   $author.html(data.author);
+   $post.append($author)
+        .append($content);
+   $("#discussion-content").append($post);
 }
 

@@ -116,12 +116,39 @@ body {
     right: 15px;
 }
 
-.discussion-content {
+/* calc height using chat-container height */
+#discussion-content {
     position: relative;
     overflow-y: scroll;
     width: 100%;
-
+    height: calc(100% - 70px);
 }
+
+.post-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.post-sender {
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+    padding: 5px;
+}
+
+.post-content {
+    display: inline-block;
+    position: relative;
+    max-width: calc(100% - 60px);
+    margin-right: 5px;
+    vertical-align: top;
+}
+
 
 /*******************************************************/
 /*   chat container  */
