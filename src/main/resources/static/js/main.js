@@ -1,5 +1,5 @@
 var SLIDENUM = 1;
-var AUTHOR;
+var AUTHOR = "instructor";
 var ROOMID;
 var OPTIONS = [];
 var optionsVal = {};
