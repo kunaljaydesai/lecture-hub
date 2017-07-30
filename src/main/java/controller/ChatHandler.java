@@ -1,12 +1,12 @@
 package controller;
 
-import model.Message;
-import model.Room;
+import model.*;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import model.Satori;
+import util.Application;
+
 import java.net.URL;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -21,7 +21,7 @@ import java.util.List;
 public class ChatHandler {
 
     @RequestMapping("/api/chat/addMessage")
-    public String publishMessage(@RequestParam(value="msg", required=true) String message, @RequestParam(value="author", required=true)
+    public Message publishMessage(@RequestParam(value="msg", required=true) String message, @RequestParam(value="author", required=true)
             String author, @RequestParam(value="room", required=true) String roomName, @RequestParam(value="slide", required=true) int slideNum) throws Exception{
         Message m = new Message(roomName, message, author, slideNum);
 
@@ -67,19 +67,23 @@ public class ChatHandler {
 
             m.addArticle(article);
         }
-
-        Satori s = new Satori();
-        s.publish(m);
-
+        Application.s.publish(m);
         m.pushToDatabase();
-
-        return "worked";
+        return m;
     }
 
     @RequestMapping("/api/chat/{roomId}/addQuiz")
-    public String addQuiz(@PathVariable String roomId, @RequestParam(value="question") String question, @RequestParam(value="options", required=false) List<String> options) {
-        //TODO Satori Support
-        return "worked";
+    public Quiz addQuiz(@PathVariable String roomId, @RequestParam(value="question") String question, @RequestParam(value="options", required=false) List<String> options) {
+        Quiz q = new Quiz(question, options, roomId);
+        Application.s.publish(q);
+        return q;
+    }
+
+    @RequestMapping("/api/chat/{roomId}/quizResponse")
+    public QuizResponse addQuizResponse(@PathVariable String roomId, @RequestParam(value="id") String id, @RequestParam(value="response") String response) {
+        QuizResponse qr = new QuizResponse(id, response, roomId);
+        Application.s.publish(qr);
+        return qr;
     }
 
     @RequestMapping("/test/addingMessage")

@@ -5,7 +5,7 @@ import util.Database;
 /**
  * Created by KunalDesai on 7/29/17.
  */
-public class Message {
+public class Message implements SatoriPublisher {
 
     private String message;
     private String author;
