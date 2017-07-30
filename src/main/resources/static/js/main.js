@@ -90,39 +90,41 @@ function init() {
 }
 
 function handleQuiz() {
-    $("#quiz-submit").bind({
-        click: function() {
-            var response = null;
-            for (var input in $("#quiz-box").children(".quiz-select")) {
-                if (input.checked) {
-                    response = input.id;
-                }
+    $("#quiz-submit").on("click", function() {
+        var response = null;
+//        console.log($("#quiz-options").children(".quiz-select"));
+//        for (var option in $("#quiz-options").children(".quiz-select")) {
+//            console.log(option);
+//            if (option.checked) {
+//                response = option.id;
+//            }
+//        }
+        $(".quiz-select").each(function() {
+            if (this.checked) {
+                response = this.id;
             }
-            if (response) {
-                sendQuiz(AUTHOR, response);
-            }
-        }
-    });
-    $("input.quiz-select").bind({
-        change: function(evt) {
-            if ($(this).siblings(':checked').length) {
-               this.checked = false;
-            }
+        });
+
+        if (response) {
+            console.log("sending response");
+            sendQuizResp(AUTHOR, response);
         }
     });
 }
 
 
 
-function sendQuiz(author, response) {
+function sendQuizResp(author, response) {
     $.ajax({
-        url : '/api/chat/addMessage',
+        url : "/api/chat/" + ROOMID + "/quizResponse",
         data : {
-            'author' : author,
+            'id' : author,
             'response' : response,
         },
         success: function() {
             console.log("Succesfully sent message");
+            $("#quiz").css("display", "none");
+            $("#quiz").empty();
         },
         fail: function() {
             console.log("Failed to send");
