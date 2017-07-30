@@ -22,9 +22,6 @@ $(function() {
             } else if (msg.response) {
                 return;
             } else {
-                if (msg.article) {
-
-                }
                 addThread(msg);
 
             }

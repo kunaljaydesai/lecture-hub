@@ -164,7 +164,7 @@ iframe {
     position: relative;
     overflow-y: scroll;
     width: 100%;
-    height: calc(30% - 50px - 70px);
+    height: calc(100% - 50px - 70px);
 }
 
 
