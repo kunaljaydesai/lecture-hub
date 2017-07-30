@@ -1,13 +1,13 @@
 ----------------------------------------------------------------
-Sat Jul 29 17:21:54 PDT 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015d-90de-e92f-0000062861c0 
-on database directory /Users/vincentchiu/Desktop/angelhack/lecture-hub/lecturehub with class loader sun.misc.Launcher$AppClassLoader@378bf509 
-Loaded from file:/Users/vincentchiu/.m2/repository/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.jar
+Sat Jul 29 18:40:12 PDT 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015d-9126-9b31-000006006328 
+on database directory /Users/KunalDesai/Documents/SideProjects/lecturehub/lecturehub with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
+Loaded from file:/Users/KunalDesai/.m2/repository/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_71-b15
-user.dir=/Users/vincentchiu/Desktop/angelhack/lecture-hub
+java.runtime.version=1.8.0_77-b03
+user.dir=/Users/KunalDesai/Documents/SideProjects/lecturehub
 os.name=Mac OS X
 os.arch=x86_64
-os.version=10.11.6
+os.version=10.10.5
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
