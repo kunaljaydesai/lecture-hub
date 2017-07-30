@@ -8,7 +8,7 @@ $(document).ready(function() {
         var client = new RTM(endpoint, appkey);
 
         client.on("enter-connected", function () {
-            console.log('Connected to Satori RTM!');
+            console.log('Connected to Satori RTM! - Instructor');
         });
 
         var subscription = client.subscribe(channelName, RTM.SubscriptionMode.SIMPLE);

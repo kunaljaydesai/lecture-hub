@@ -38,13 +38,14 @@ function init() {
             $(".container-bar").each(function() {
 
                         totalOptionsVal = 0;
-                        for (var i = 0; i < optionsVal.length; i++) {
-                            totalOptionsVal += optionsVal[i];
+                        for (var key in optionsVal) {
+                            totalOptionsVal += optionsVal[key];
                         }
                         var appendDestination = ".progress#" + $(this).attr('id');
                         var bar = new ProgressBar.Line(appendDestination, {easing: 'easeInOut'});
-                        bar.animate(0.25);
-//                        bar.animate(optionsVal[$(this).attr('id')] / totalOptionsVal);
+//                        bar.animate(0.25);
+                        console.log(optionsVal[$(this).attr('id')] / totalOptionsVal);
+                        bar.animate(optionsVal[$(this).attr('id')] / totalOptionsVal);
                     });
             progressExists = true;
         }
