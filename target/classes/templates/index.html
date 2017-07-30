@@ -9,10 +9,11 @@
     <!-- paths -->
 
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../../css/style.css"/>
-    <script type="text/javascript" src="../../js/main.js"> </script>
-
+    <!-- satori sdk -->
+    <script src="https://satori-a.akamaihd.net/satori-rtm-sdk/v1.0.2/sdk.min.js"></script>
 </head>
 <body>
+    <div id="info"  th:attr="data-channel=${id}" style="display: none"> </div>
     <div class="header layer-1">
         <div class="logo">
             lecture-hub
@@ -47,14 +48,14 @@
         <!-- chat -->
         <div class="container-color chat-container"> </div>
         <div class="chat-container layer-1">
-            <input id="chat-input" type="text" placeholder="have a burning question?" > </input>
-            <!-- <form id="chat-main">  -->
-
-            <input id="chat-enter" type="submit" style="display:none;"> </input>
-            <!-- </form> -->
+            <input id="chat-input" type="text" placeholder="..."> </input>
+            <input id="chat-post" type="submit" value="post" > </input>
         </div>
     </div>
 
 
 </body>
+
+<script type="text/javascript" src="../../js/main.js"> </script>
+<script type="text/javascript" src="../../js/satori.js"> </script>
 </html>
