@@ -3,7 +3,12 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
-    background:radial-gradient(circle at 51% 39%,#8d9eab,#22272b) fixed;
+    background:linear-gradient(circle at 51% 39%,#22272b,#161616) fixed;
+    color: #F0F3F4;
+}
+
+iframe {
+    border: 0 !important;
 }
 
 .layer-1 {
@@ -98,12 +103,25 @@ body {
 /*   discussion panel  */
 /*******************************************************/
 
+/*******************************************************/
+/*   discussion panel  */
+/*******************************************************/
+
 .discussion-container {
     top: 60px;
     left: 0;
     width: 30vw;
     position: fixed;
-    margin-left: 20px;
+    padding-left: 20px;
+
+}
+.discussion-filter {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: gray;
+    opacity: 0.2;
+
 }
 
 .discussion-header {
@@ -133,6 +151,78 @@ body {
     right: 15px;
 }
 
+/* calc height using disc-header + chat-container height */
+#discussion-content {
+    position: relative;
+    overflow-y: scroll;
+    width: 100%;
+    height: calc(50% - 50px - 70px);
+}
+
+
+.thread-container {
+    position: relative;
+    width: calc(100% - 6px);
+    margin-top: 10px;
+    height: 80px;
+    border-radius: 5px;
+}
+
+.thread-background {
+    position: absolute;
+    background: white;
+    /*opacity: 0.5;*/
+    box-shadow: 4px 4px 10px #1E1E1E;
+    width: calc(100% - 6px);
+    height: 100%;
+    border-radius: 5px;
+}
+
+.thread-status {
+    position: absolute;
+    border-radius: 50%;
+    background: red;
+    width: 10px;
+    height: 10px;
+    right: 15px;
+    top: 8px;
+}
+
+.thread-subject {
+    display: block;
+    position: relative;
+    width: calc(100% - 20px);
+    padding-left: 20px;
+    height: auto;
+    vertical-align: top;
+    color: black;
+}
+
+.thread-content {
+    color: #D0D3D4;
+    height: 40px;
+    display: block;
+    position: relative;
+    padding-left: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.thread-author {
+    display: block;
+    position: relative;
+    float: left;
+    padding-left: 20px;
+    padding-top: 5px;
+    width: 100%;
+    height: 20px;
+    color: #D0D3D4;
+}
+
+.thread-subject {
+    font-weight: bold;
+}
+
 .scroll-header {
     position: relative;
 }
@@ -147,6 +237,8 @@ body {
     width: 100%;
     text-align: center;
 }
+
+
 
 /*   container  */
 
@@ -163,6 +255,14 @@ body {
 
 /*  button */
 
+.index-color {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    background: white;
+    opacity: 0.5;
+}
 .open-button {
     width: 50px;
     height: 50px;
@@ -209,7 +309,7 @@ body {
     border-radius: 0 !important;
     border: 0 !important;
     border-bottom: 1px solid #979797 !important;
-    background: 0;
+    background: 0 !important;
     box-shadow: none;
     padding-left: 0 !important;
     margin-bottom: 5px;
@@ -228,6 +328,7 @@ body {
     vertical-align: middle;
     border-radius: 50%;
     transition: all .2s ease-in-out;
+    background: 0 !important;
 }
 
 .form-submit:hover {
@@ -241,6 +342,12 @@ body {
 #modal-content {
     text-align: center;
 }
+
+
+#post-content {
+    width: 100%;
+}
+
 
 
 /*******************************************************/

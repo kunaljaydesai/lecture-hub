@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"></link>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
 
+    <!-- velocity -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
+
     <!-- paths -->
 
     <link rel="stylesheet" type="text/css" href="../../css/instructor.css"></link>
@@ -73,17 +76,16 @@
             <!--<div id="post-toggle" class="open-button full-width-center">-->
             <!--<div id="plus-sign"> + </div>-->
             <!--</div>-->
-            <div id="form-title" > ANSWER A QUESTION </div>
             <div id="post-form">
-                <input id="post-subject" type="text" placeholder="topic of inquiry..."> </input>
-                <input id="post-content" type="text" placeholder="..."> </input>
-                <input id="chat-post" type="submit" value="post"> </input>
+                <input id="post-subject" class="form-input" type="text" placeholder="topic of inquiry..."> </input>
+                <input id="post-content" class="form-input" type="text" placeholder="question..."> </input>
+                <div id="chat-post" class="form-submit"> <div class="index-color"> </div> + </div>
             </div>
         </div>
     </div>
 
     <div class="question-container bottomFooter layer-1">
-
+        <div class="discussion-filter"> </div>
         <!-- Topics header -->
         <div class="discussion-header scroll-header">
             <div class="topics-list" > Common Topics </div>
