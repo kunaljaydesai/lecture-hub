@@ -19,7 +19,7 @@
     <script src="https://satori-a.akamaihd.net/satori-rtm-sdk/v1.0.2/sdk.min.js"></script>
 </head>
 <body>
-    <div id="info" th:attr="data-channel=${id}" style="display: none"> </div>
+    <div id="info" data-view="student" th:attr="data-channel=${id}" style="display: none"> </div>
     <div class="page_header layer-1">
         <div class="logo">
             lecture-hub
@@ -28,11 +28,13 @@
     <div class="main-view layer-2">
         <div class="slide-show">
             <div data-index="0" class="slide-container">
-                <iframe id="pdf" style="border:1px solid #666CCC" title="PDF" th:src="${src}" src="/files/aakash1.pdf" frameborder="1" scrolling="auto" height="1100" width="850" ></iframe>
+                <img class="slide" src="demo-slide.jpg"> </img>
             </div>
             <div data-index="1" class="slide-container">
-                <img class="slide"> </img>
+                <img class="slide" src="demo-slide.jpg"> </img>
             </div>
+            <div id="slide-index"> <div class="index-color"> </div> 1 / 5 </div>
+
         </div>
     </div>
 
@@ -57,13 +59,12 @@
             <!--<input id="chat-post" type="submit" value="post" > </input>-->
             <!-- post toggle -->
             <!--<div id="post-toggle" class="open-button full-width-center">-->
-                <!--<div id="plus-sign"> + </div>-->
+            <!--<div id="plus-sign"> + </div>-->
             <!--</div>-->
-            <div id="form-title" > ASK A QUESTION </div>
             <div id="post-form">
-                <input id="post-subject" type="text" placeholder="topic of inquiry..."> </input>
-                <input id="post-content" type="text" placeholder="..."> </input>
-                <input id="chat-post" type="submit" value="post"> </input>
+                <input id="post-subject" class="form-input" type="text" placeholder="topic of inquiry..."> </input>
+                <input id="post-content" class="form-input" type="text" placeholder="question..."> </input>
+                <div id="chat-post" class="form-submit"> <div class="index-color"> </div> + </div>
             </div>
         </div>
         <!-- form -->
