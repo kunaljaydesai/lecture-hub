@@ -3,7 +3,6 @@ var AUTHOR;
 var ROOMID;
 
 
-
 $(function() {
     ROOMID = $("#info").data("channel");
     init();
@@ -23,7 +22,7 @@ $(function() {
 //    buttonToggle();
 
     formHandler();
-
+    threadHandler();
 
 });
 
@@ -99,8 +98,8 @@ function formHandler() {
                     notify("please enter subject and subject before posting!");
                     return;
                 }
-//                fakeThread();
-                sendMessage(AUTHOR, MESSAGE, ROOMID, SLIDENUM);
+               fakeThread();
+                // sendMessage(AUTHOR, SUBJECT, MESSAGE, ROOMID, SLIDENUM);
 //                formOut();
 //                $("#plus-sign").css("display", "block");
                 $("#post-content").val("");
@@ -109,7 +108,7 @@ function formHandler() {
         });
 }
 
-function sendMessage(author, message, roomId, slideNum) {
+function sendMessage(author, subject, message, roomId, slideNum) {
         $.ajax({
             url : '/api/chat/addMessage',
             data : {
@@ -158,14 +157,23 @@ function closeButton() {
 }
 
 function threadHandler() {
-    var $color = $("")
-    $(".thread-container").bind({
+    var $color = $("");
+    $(".thread-content").bind({
         mouseover: function() {
 
+        },
+        click: function() {
+            console.log("clicked");
+            var thread = this;
+            if (!thread.dataset.read) {
+                thread.dataset.read = true;
+                $(thread).children(".thread-status").css("background", "green");
+            } else {
+
+            }
         }
     });
 }
-
 
 
 
@@ -220,13 +228,20 @@ function formOut() {
 
 function fakeThread() {
    var $thread = $("<div>", {"class": "thread-container"});
+   var $subject = $("<div>", {"class": "thread-subject"});
    var $content = $("<div>", {"class": "thread-content"});
    var $color = $("<div>", {"class": "thread-background"});
-   $content.html("blah blah balh blah");
+   var $status = $("<div>", {"class": "thread-status"});
+   $status.data("read");
+
+   $content.html("blah blah balh blah blah lah blah balh blah blahlah blahah balh blah blahlah blah balh blah balh blah blahlah blah balh blah balh blah blahlah blah balh blah balh blah blahlah blah balh blah balh blah blahlah blah balh bl balh blah blahlah blah balh blah blahlah blah balh blah blahlah blah balh blah blah");
    var $author = $("<div>", {"class": "thread-author"});
    $author.html("author");
+   $subject.html("merge-sort");
    $thread.append($color)
         .append($author)
+        .append($subject)
+        .append($status)
         .append($content);
    $("#discussion-content").append($thread);
    $thread.velocity("fadeIn", {duration: 500});
