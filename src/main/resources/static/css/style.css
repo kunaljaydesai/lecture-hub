@@ -408,6 +408,7 @@ body {
 .quiz-option-text {
     display: inline-block;
     position: relative;
+    padding-left: 5px;
 }
 
 
@@ -418,9 +419,7 @@ body {
     width: 100px;
     height: 40px;
     color: #F0F3F4;
-
 }
-
 
 
 

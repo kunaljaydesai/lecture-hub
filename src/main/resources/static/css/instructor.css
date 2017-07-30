@@ -3,7 +3,7 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
-    background: #F0F3F4;
+    background:radial-gradient(circle at 51% 39%,#8d9eab,#22272b) fixed;
 }
 
 .layer-1 {
@@ -64,7 +64,6 @@ body {
 
 
 .slide-show {
-    background: #F0F3F4;
     position: relative;
     float: right;
     clear: both;
@@ -189,36 +188,54 @@ body {
 
 #form-title {
     position: relative;
-    padding-top: 10px;
     padding-bottom: 10px;
 }
+
+
+
 #post-form {
-    height: auto;
+   /* height: auto;
     width: calc(100% - 20px);
     top: 0;
     position: relative;
     padding: 2px;
-    background: transparent;
+    background: transparent;*/
+    position: relative;
 }
 
-#post-subject {
-
+.form-input {
+    display: block;
+    position: relative;
+    border-radius: 0 !important;
+    border: 0 !important;
+    border-bottom: 1px solid #979797 !important;
+    background: 0;
+    box-shadow: none;
+    padding-left: 0 !important;
+    margin-bottom: 5px;
 }
 
-#post-content {
 
+.form-submit {
+    position: absolute;
+    margin-right: 5px;
+    right: 0;
+    top: 0;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+    transition: all .2s ease-in-out;
 }
 
-
-input[type=text] {
-    /*width: 100%;*/
-    border: 0px;
-
-}
-
-input[type=text], select {
-    border: 0px;
-    outline: none;
+.form-submit:hover {
+    /*box-shadow: 4px 4px 15px #D0D0D0;*/
+    transform: scale(1.1);
+    /*background: #212F3D;*/
+    /*color: orange;*/
+    opacity: 1;
 }
 
 #modal-content {
