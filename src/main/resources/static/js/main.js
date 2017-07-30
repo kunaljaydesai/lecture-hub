@@ -26,6 +26,7 @@ $(function() {
 
     formHandler();
     threadHandler();
+    handleQuiz();
 
 });
 
@@ -98,6 +99,47 @@ function init() {
     });
 
 
+}
+
+function handleQuiz() {
+    $("#quiz-submit").bind({
+        click: function() {
+            var response = null;
+            for (var input in $("#quiz-box").children(".quiz-select")) {
+                if (input.checked) {
+                    response = input.id;
+                }
+            }
+            if (response) {
+                sendQuiz(AUTHOR, response);
+            }
+        }
+    });
+    $("input.quiz-select").bind({
+        change: function(evt) {
+            if ($(this).siblings(':checked').length) {
+               this.checked = false;
+            }
+        }
+    });
+}
+
+
+
+function sendQuiz(author, response) {
+    $.ajax({
+        url : '/api/chat/addMessage',
+        data : {
+            'author' : author,
+            'response' : response,
+        },
+        success: function() {
+            console.log("Succesfully sent message");
+        },
+        fail: function() {
+            console.log("Failed to send");
+        }
+    });
 }
 
 

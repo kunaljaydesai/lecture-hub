@@ -15,7 +15,12 @@ $(function() {
 
     subscription.on('rtm/subscription/data', function (pdu) {
         pdu.body.messages.forEach(function (msg) {
-            // if ( msg.keyQuestion && $("#info").data("view") === "student") load quiz
+            console.log(msg);
+            if (msg.question && $("#info").data("view") === "student") {
+                loadQuiz(msg);
+            } else {
+                addThread(msg);
+            }
             addThread(msg);
             console.log(JSON.parse(msg));
         });
@@ -25,6 +30,28 @@ $(function() {
 
 });
 
+function loadQuiz(data) {
+    $("#quiz").css("display", "block");
+    $("#quiz-q").html(data.question);
+    console.log(data.question);
+    $container = $("#quiz-options");
+    for (var option in data.options) {
+        var $optionText = $("<div>", {"class": "quiz-option-text"});
+        if (option == 0) {
+            $optionText.html(data.options[option].slice(2, data.options[option].length - 1));
+        } else if (option == data.options.length - 1) {
+            $optionText.html(data.options[option].slice(1, data.options[option].length - 2));
+        } else {
+            $optionText.html(data.options[option].slice(1, data.options[option].length - 1));
+        }
+        var $quizOption = $("<div>", {"class": "quiz-option"});
+        $quizOption.append($("<input>", {"id": option, "type": "checkbox","class": "quiz-select"}));
+
+        console.log($optionText.html());
+        $quizOption.append($optionText);
+        $container.append($quizOption);
+    }
+}
 
 
 function addThread(data) {
