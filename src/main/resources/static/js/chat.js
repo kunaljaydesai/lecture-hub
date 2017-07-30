@@ -22,7 +22,11 @@ $(function() {
             } else if (msg.response) {
                 return;
             } else {
+                if (msg.article) {
+
+                }
                 addThread(msg);
+
             }
         });
     });
@@ -61,6 +65,7 @@ function loadQuiz(data) {
 
 
 function addThread(data) {
+    console.log(data);
     var $thread = $("<div>", {"class": "thread-container"});
     var $subject = $("<div>", {"class": "thread-subject"});
     var $content = $("<div>", {"class": "thread-content"});
@@ -68,7 +73,14 @@ function addThread(data) {
     var $status = $("<div>", {"class": "thread-status"});
     $status.data("read");
 
-    $content.html(data.message);
+    if (data.article) {
+        var $linked = $("<a>",  {"href": data.article});
+        $linked.html(data.message);
+        $content.append($linked);
+    } else {
+        $content.html(data.message);
+    }
+
     var $author = $("<div>", {"class": "thread-author"});
     $author.html(data.author);
     $subject.html(data.subject);
