@@ -7,10 +7,13 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> </link>
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.6.0/dist/progressbar.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"></link>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+
     <!-- paths -->
 
     <link rel="stylesheet" type="text/css" href="../../css/instructor.css"></link>
-    <script type="text/javascript" src="../../js/instructor.css"> </script>
 
 </head>
 <body>
@@ -39,24 +42,43 @@
     <div class="discussion-container underHeader layer-1">
 
         <!-- header -->
-        <div class="discussion-header slide-number">
-            <div class="discussion-name padding-left" > Discussion </div>
-            <div class="slide-info padding-right"> Slide 1 </div>
+        <!--<div class="discussion-header slide-number">-->
+            <!--<div class="discussion-name padding-left" > Discussion </div>-->
+            <!--<div class="slide-info padding-right"> Slide 1 </div>-->
+        <!--</div>-->
+
+        <div class="discussion-header">
+            <div class="discussion-name padding-left" > THREADS </div>
+            <div class="slide-info padding-right"> SLIDE 1 </div>
         </div>
 
         <!-- content -->
-        <div class="discussion-content">
+        <div id="discussion-content">
 
         </div>
 
         <!-- chat -->
-        <div class="container-color chat-container"> </div>
-        <div class="chat-container layer-1">
-            <input id="chat-input" type="text" placeholder="Have a burning question?" > </input>
-            <!-- <form id="chat-main">  -->
+        <!--<div class="container-color chat-container"> </div>-->
+        <!--<div class="chat-container layer-1">-->
+            <!--<input id="chat-input" type="text" placeholder="Have a burning question?" > </input>-->
+            <!--&lt;!&ndash; <form id="chat-main">  &ndash;&gt;-->
 
-            <input id="chat-enter" type="submit" style="display:none;"> </input>
-            <!-- </form> -->
+            <!--<input id="chat-enter" type="submit" style="display:none;"> </input>-->
+            <!--&lt;!&ndash; </form> &ndash;&gt;-->
+        <!--</div>-->
+        <div id="post-container" class="post-container layer-1">
+            <!--<input id="chat-input" type="text" placeholder="..."> </input>-->
+            <!--<input id="chat-post" type="submit" value="post" > </input>-->
+            <!-- post toggle -->
+            <!--<div id="post-toggle" class="open-button full-width-center">-->
+            <!--<div id="plus-sign"> + </div>-->
+            <!--</div>-->
+            <div id="form-title" > ANSWER A QUESTION </div>
+            <div id="post-form">
+                <input id="post-subject" type="text" placeholder="topic of inquiry..."> </input>
+                <input id="post-content" type="text" placeholder="..."> </input>
+                <input id="chat-post" type="submit" value="post"> </input>
+            </div>
         </div>
     </div>
 
@@ -85,7 +107,57 @@
             </div>
         </div>
     </div>
+    <div id="fixedbutton">
+        <button style="float: right;" class="ui inverted blue button" id="quiz-button">Quiz</button>
+        <button style="float: right;" class="ui inverted blue button" id="quiz-stats-button">Quiz Stats</button>
+    </div>
+    <div id="instructor-quiz" class="ui modal">
+        <i class="close icon"></i>
+        <div class="header">
+            Create a Quiz
+        </div>
+        <div class="content">
+            <h3>Question</h3>
+            <div class="ui input">
+                <input id="new-question" type="text" placeholder="What is an abstract class?"></input>
+            </div>
+            <br></br>
+            <br></br>
+            <div class="ui radio checkbox" id="option-list">
 
+            </div>
+            <br></br>
+            <br></br>
+            <button class="ui inverted blue button" id="add-option">Add Option</button>
+            <div class="ui input">
+                <input id="new-option" type="text" placeholder="Yes"> </input>
+            </div>
+        </div>
+        <div class="actions">
+            <div id="publish-quiz" class="ui positive right labeled icon button">
+                Publish
+                <i class="checkmark icon"></i>
+            </div>
+        </div>
+    </div>
+
+    <div id="instructor-quiz-stats" class="ui modal">
+        <i class="close icon"></i>
+        <div class="header">
+            Quiz Stats
+        </div>
+        <div class="content">
+
+        </div>
+        <div class="actions">
+            <div class="ui black deny button">
+                Close
+            </div>
+        </div>
+    </div>
 
 </body>
+
+<script type="text/javascript" src="../../js/main.js"> </script>
+
 </html>

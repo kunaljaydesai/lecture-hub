@@ -55,7 +55,6 @@ body {
 
 .underHeader {
     height: calc(50% - 30px);
-    background-color: #FFF;
 }
 
 
@@ -105,14 +104,16 @@ body {
     left: 0;
     width: 30vw;
     position: fixed;
+    margin-left: 20px;
 }
 
 .discussion-header {
     top: 0;
+    position: relative;
     height: 50px;
     width: 100%;
-    background: #FA8500;
     line-height: 50px;
+    background: transparent;
     vertical-align: middle;
 }
 
@@ -133,11 +134,6 @@ body {
     right: 15px;
 }
 
-.discussion-content {
-    position: relative;
-    width: 100%;
-}
-
 .scroll-header {
     position: relative;
 }
@@ -146,37 +142,73 @@ body {
 /*   chat container  */
 /*******************************************************/
 
-.chat-container {
+
+
+.full-width-center {
+    width: 100%;
+    text-align: center;
+}
+
+/*   container  */
+
+#post-container {
     position: absolute;
-    bottom: calc(50% - 25vh);
-    width: calc(100% - 2px);
+    bottom: 0;
+    width: 100%;
     height: 70px;
 }
 
 .container-color {
-    /*background: black;*/
     opacity: 0.3;
 }
 
+/*  button */
 
-/* calc width: (100vw - slide-info width) */
-#chat-main {
-    width: 100%;
-    display: inline-block;
-    position: relative;
-    height: 100%;
+.open-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 4px 4px 10px #D0D0D0;
+    background: #2B92FF;
+    text-align: center;
     vertical-align: middle;
+    line-height: 50px;
+    z-index: 100;
 }
 
-#chat-input {
-    position: relative;
+#post-toggle {
     display: inline-block;
-    padding-left: 10px;
-    padding-right: 10px;
-    width: calc(100% - 20px);
-    /*width: 100%;*/
-    /*height: 50%;*/
 }
+
+#plus-sign {
+     color: #F0F3F4;
+     font-size: 20px;
+}
+
+/*   form  */
+
+#form-title {
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#post-form {
+    height: auto;
+    width: calc(100% - 20px);
+    top: 0;
+    position: relative;
+    padding: 2px;
+    background: transparent;
+}
+
+#post-subject {
+
+}
+
+#post-content {
+
+}
+
 
 input[type=text] {
     /*width: 100%;*/
@@ -188,6 +220,11 @@ input[type=text], select {
     border: 0px;
     outline: none;
 }
+
+#modal-content {
+    text-align: center;
+}
+
 
 /*******************************************************/
 /*   question container  */
@@ -244,4 +281,21 @@ input[type=text], select {
     left: -20px;
     float: right;
 
+}
+
+#fixedbutton {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    height: 50px;
+    width: 80px;
+    display: inline-block;
+    float: right;
+    width: 200px;
+}
+
+#new-question {
+    width : 600px;
 }

@@ -67,18 +67,18 @@ public class Satori {
         client.start();
     }
 
-    public void publish(Message msg) {
+    public void publish(SatoriPublisher sp) {
 
-        String channel = msg.getRoomName();
+        String channel = sp.getRoomName();
 
         // At this point, the client may not yet be connected to Satori RTM.
         // If the client is not connected, the SDK internally queues the publish request and
         // will send it once the client connects
-        ListenableFuture<Pdu<PublishReply>> reply = client.publish(channel, msg, Ack.YES);
+        ListenableFuture<Pdu<PublishReply>> reply = client.publish(channel, sp, Ack.YES);
 
         Futures.addCallback(reply, new FutureCallback<Pdu<PublishReply>>() {
             public void onSuccess(Pdu<PublishReply> publishReplyPdu) {
-                System.out.println("Message is published: " + msg);
+                System.out.println("Message is published: " + sp);
             }
 
             public void onFailure(Throwable t) {

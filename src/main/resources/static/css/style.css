@@ -3,7 +3,11 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
+    /*background: #F0F3F4;*/
+    background:radial-gradient(circle at 51% 39%,#8d9eab,#22272b) fixed;
+    color: #F0F3F4;
 }
+
 
 .layer-1 {
     z-index: 100;
@@ -51,7 +55,7 @@ body {
 
 
 .slide-show {
-    background: #F0F3F4;
+    /*background: #F0F3F4;*/
     position: relative;
     float: right;
     height: 100vh;
@@ -61,23 +65,51 @@ body {
 }
 
 .slide-container {
-    height: 100%;
+    height: 100vh;
     width: 100%;
     padding: 15px;
     position: relative;
     background: transparent;
+    vertical-align: middle;
+    text-align: center;
+
 }
 
 .slide {
+    vertical-align: middle;
+    display: inline-block;
     max-width: calc(100% - 30px);
     max-height: calc(100% - 30px);
-    box-shadow: 4px 4px 10px #D0D0D0;
+    box-shadow: 4px 4px 10px #000000;
 }
 
 .slide-nav {
     position: fixed;
     right: -30vw;
     width: 30vw;
+}
+
+.index-color {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    background: white;
+    opacity: 0.5;
+}
+
+
+#slide-index {
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    color: #F0F3F4;
 }
 
 
@@ -90,6 +122,7 @@ body {
     left: 0;
     width: 30vw;
     position: fixed;
+    margin-left: 20px;
 }
 
 .discussion-header {
@@ -97,8 +130,8 @@ body {
     position: relative;
     height: 50px;
     width: 100%;
-    background: #FA8500;
     line-height: 50px;
+    background: transparent;
     vertical-align: middle;
 }
 
@@ -119,89 +152,205 @@ body {
     right: 15px;
 }
 
-/* calc height using chat-container height */
+/* calc height using disc-header + chat-container height */
 #discussion-content {
     position: relative;
     overflow-y: scroll;
     width: 100%;
-    height: calc(100% - 70px);
+    height: calc(100% - 50px - 70px);
 }
 
-.post-container {
+
+.thread-container {
     position: relative;
-    width: 100%;
-    height: auto;
+    width: calc(100% - 6px);
+    margin-top: 10px;
+    height: 80px;
+    border-radius: 5px;
 }
 
-.post-sender {
-    display: inline-block;
+.thread-background {
+    position: absolute;
+    background: white;
+    /*opacity: 0.5;*/
+    box-shadow: 4px 4px 10px #1E1E1E;
+    width: calc(100% - 6px);
+    height: 100%;
+    border-radius: 5px;
+}
+
+.thread-status {
+    position: absolute;
+    border-radius: 50%;
+    background: red;
+    width: 10px;
+    height: 10px;
+    right: 15px;
+    top: 8px;
+}
+
+.thread-subject {
+    display: block;
+    position: relative;
+    width: calc(100% - 20px);
+    padding-left: 20px;
+    height: auto;
+    vertical-align: top;
+    color: black;
+}
+
+.thread-content {
+    color: #D0D3D4;
+    height: 40px;
+    display: block;
+    position: relative;
+    padding-left: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.thread-author {
+    display: block;
     position: relative;
     float: left;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    vertical-align: middle;
-    padding: 5px;
+    padding-left: 20px;
+    padding-top: 5px;
+    width: 100%;
+    height: 20px;
+    color: #D0D3D4;
 }
 
-.post-content {
-    display: inline-block;
-    position: relative;
-    max-width: calc(100% - 60px);
-    margin-right: 5px;
-    vertical-align: top;
+.thread-subject {
+    font-weight: bold;
 }
+
+
+/*******************************************************/
+/*   replies */
+/*******************************************************/
+
+
+
+
 
 
 /*******************************************************/
 /*   chat container  */
 /*******************************************************/
 
-.chat-container {
+
+
+.full-width-center {
+    width: 100%;
+    text-align: center;
+}
+
+/*   container  */
+
+#post-container {
     position: absolute;
     bottom: 0;
-    width: calc(100% - 2px);
+    width: 100%;
     height: 70px;
-    border: 1px solid #F0F3F4;
 }
 
 .container-color {
-    /*background: black;*/
     opacity: 0.3;
 }
 
+/*  button */
 
-/* calc width: (100vw - slide-info width) */
-#chat-main {
-    width: 100%;
-    display: inline-block;
-    position: relative;
-    height: 100%;
-
+.open-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 4px 4px 10px #D0D0D0;
+    background: #2B92FF;
+    text-align: center;
     vertical-align: middle;
+    line-height: 50px;
+    z-index: 100;
 }
 
-#chat-input {
-    position: relative;
+#post-toggle {
     display: inline-block;
-    padding-left: 10px;
-    padding-right: 10px;
-    width: calc(100% - 20px);
-    /*width: 100%;*/
-    /*height: 50%;*/
 }
 
-input[type=text] {
-    /*width: 100%;*/
-    border: 0px;
+#plus-sign {
+     color: #F0F3F4;
+     font-size: 20px;
+}
 
+/*   form  */
+
+#form-title {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+
+
+#post-form {
+   /* height: auto;
+    width: calc(100% - 20px);
+    top: 0;
+    position: relative;
+    padding: 2px;
+    background: transparent;*/
+    position: relative;
+}
+
+.form-input {
+    display: block;
+    position: relative;
+    border-radius: 0 !important;
+    border: 0 !important;
+    border-bottom: 1px solid #979797 !important;
+    background: 0;
+    box-shadow: none;
+    padding-left: 0 !important;
+    margin-bottom: 5px;
+}
+
+
+.form-submit {
+    position: absolute;
+    margin-right: 5px;
+    right: 0;
+    top: 0;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+    transition: all .2s ease-in-out;
+}
+
+.form-submit:hover {
+    /*box-shadow: 4px 4px 15px #D0D0D0;*/
+    transform: scale(1.1);
+    /*background: #212F3D;*/
+    /*color: orange;*/
+    opacity: 1;
 }
 
 input[type=text], select {
-    border: 0px;
     outline: none;
 }
+
+#post-subject {
+
+
+}
+
+#post-content {
+    width: 100%;
+}
+
 
 #modal-content {
     text-align: center;
 }
+
+
