@@ -17,7 +17,7 @@ $(function() {
         pdu.body.messages.forEach(function (msg) {
             // if ( msg.keyQuestion && $("#info").data("view") === "student") load quiz
             addThread(msg);
-            console.log(msg);
+            console.log(JSON.parse(msg));
         });
     });
 

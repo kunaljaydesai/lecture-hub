@@ -7,13 +7,13 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> </link>
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.6.0/dist/progressbar.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"></link>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
 
     <!-- paths -->
 
     <link rel="stylesheet" type="text/css" href="../../css/instructor.css"></link>
-    <script type="text/javascript" src="../../js/instructor.css"> </script>
 
 </head>
 <body>
@@ -107,7 +107,10 @@
             </div>
         </div>
     </div>
-    <button id="fixedbutton" class="ui inverted blue button">Quiz</button>
+    <div id="fixedbutton">
+        <button style="float: right;" class="ui inverted blue button" id="quiz-button">Quiz</button>
+        <button style="float: right;" class="ui inverted blue button" id="quiz-stats-button">Quiz Stats</button>
+    </div>
     <div id="instructor-quiz" class="ui modal">
         <i class="close icon"></i>
         <div class="header">
@@ -134,6 +137,21 @@
             <div id="publish-quiz" class="ui positive right labeled icon button">
                 Publish
                 <i class="checkmark icon"></i>
+            </div>
+        </div>
+    </div>
+
+    <div id="instructor-quiz-stats" class="ui modal">
+        <i class="close icon"></i>
+        <div class="header">
+            Quiz Stats
+        </div>
+        <div class="content">
+
+        </div>
+        <div class="actions">
+            <div class="ui black deny button">
+                Close
             </div>
         </div>
     </div>

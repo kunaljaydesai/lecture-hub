@@ -1,7 +1,9 @@
 var SLIDENUM = 1;
 var AUTHOR;
 var ROOMID;
-
+var OPTIONS = [];
+var optionsVal = {};
+var progressBars = [];
 
 $(function() {
     ROOMID = $("#info").data("channel");
@@ -27,7 +29,24 @@ $(function() {
 });
 
 function init() {
-    $("#fixedbutton").on('click', function() {
+    console.log("INIT METHOD RAN");
+    $("#quiz-stats-button").on('click', function() {
+        $("#instructor-quiz-stats").modal('show');
+        $(".container-bar").each(function() {
+
+            totalOptionsVal = 0;
+            for (var i = 0; i < optionsVal.length; i++) {
+                totalOptionsVal += optionsVal[i];
+            }
+            var appendDestination = ".progress#" + $(this).attr('id');
+            var bar = new ProgressBar.Line(appendDestination, {easing: 'easeInOut'});
+            bar.animate(optionsVal[$(this).attr('id')] / totalOptionsVal);
+        });
+
+
+    });
+
+    $("#quiz-button").on('click', function() {
         //show modal
         $("#instructor-quiz").modal('show');
     });
@@ -39,20 +58,25 @@ function init() {
     });
 
     $("#publish-quiz").on('click', function() {
-        var options = [];
         $('.option-labels').each(function () {
-            options.push($(this).text());
-            console.log(options);
+            OPTIONS.push($(this).text());
         }).promise().done(function() {
             var question = $("#new-question").val();
             $.ajax({
+                method : "POST",
                 url : "/api/chat/" + ROOMID + "/addQuiz",
                 data : {
-                    'options' : JSON.stringify(options),
+                    'options' : JSON.stringify(OPTIONS),
                     'question' : question,
                 },
                 success : function(data) {
                     console.log("Quiz succesfully published");
+                    $("#instructor-quiz-stats .content").empty();
+                    $("#instructor-quiz-stats .content").append("<h2>Question</h2>" + "<p>" + question + "</p>");
+                    $("#instructor-quiz-stats .content").append("<h2>Options</h2>");
+                    for (var i = 0; i < OPTIONS.length; i++) {
+                        $("#instructor-quiz-stats .content").append("<div class=container-bar id=" + OPTIONS[i] + "><p class=options-stats>" + OPTIONS[i] + "</p><div class=progress id=" + OPTIONS[i] + "></div></div><br>");
+                    }
                     $("#new-question").val("");
                     $("#option-list").empty();
                 }
