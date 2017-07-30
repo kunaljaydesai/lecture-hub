@@ -1,0 +1,10 @@
+.idea/*
+lecturehub/*
+lecturehub/seg0/*
+lecturehub/service.properties
+derby.log
+lecture-hub.iml
+lecturehub.iml
+target/*
+.idea/
+target/
