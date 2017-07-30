@@ -8,6 +8,7 @@ lecturehub.iml
 target/*
 .idea/
 target/
+target/
 .gitignore
 lecturehub/db.lck
 lecturehub/log/
@@ -88,3 +89,4 @@ target/classes/templates/home.html
 target/classes/util/Application.class
 target/generated-sources/
 target/maven-status/
+lecturehub/

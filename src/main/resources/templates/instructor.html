@@ -17,26 +17,26 @@
     <!-- paths -->
 
     <link rel="stylesheet" type="text/css" href="../../css/instructor.css"></link>
+    <script src="https://satori-a.akamaihd.net/satori-rtm-sdk/v1.0.2/sdk.min.js"></script>
 
 </head>
 <body>
     <div id="info" th:attr="data-channel=${id}" style="display: none"> </div>
     <div class="page_header layer-1">
-        <div class="logo">
-            lecture-hub
-        </div>
+        <img id="logo" src="../../img/hack_logo_instr.png"> </img>
         <div class = "instructor">
-        	<h1>Instructor View</h1>
+        	<div id="instructor-tag">Instructor View</div>
         </div>
     </div>
     <div class="main-view layer-2">
         <div class="slide-show">
-            <div data-index="0" class="slide-container">
+            <!--<div data-index="0" class="slide-container">
                 <iframe id="pdf" style="border:1px solid #666CCC" title="PDF" th:src="${src}" src="/files/aakash1.pdf" frameborder="1" scrolling="auto" height="1100" width="850" ></iframe>
             </div>
             <div data-index="1" class="slide-container">
                 <img class="slide"> </img>
-            </div>
+            </div>-->
+            <iframe id="pdf" style="border:1px solid #666CCC" title="PDF" th:src="${src}" src="/files/aakash1.pdf" frameborder="1" scrolling="auto" height="1100" width="850" ></iframe>
         </div>
     </div>
 
@@ -161,5 +161,6 @@
 </body>
 
 <script type="text/javascript" src="../../js/main.js"> </script>
+<script type="text/javascript" src="../../js/instructorChat.js"> </script>
 
 </html>
