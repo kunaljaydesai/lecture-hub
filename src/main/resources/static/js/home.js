@@ -38,9 +38,9 @@ $(document).ready(function() {
     });
 
     $("#button2").on('click', function() {
-        location.href = "/room";
+        location.href = "/";
     });
     $(".learnbutton").on('click', function() {
-        location.href = "/room";
+        location.href = "/";
     });
 })

@@ -316,3 +316,11 @@ body {
 #new-question {
     width : 600px;
 }
+
+#instructor-tag {
+
+    font-size: 25px;
+
+    margin-top: 19px;
+    margin-right: -73px;
+}
