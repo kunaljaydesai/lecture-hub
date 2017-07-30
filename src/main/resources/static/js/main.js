@@ -18,7 +18,7 @@ $(function() {
     }
 
     login();
-    buttonToggle();
+//    buttonToggle();
 
     formHandler();
 
@@ -59,9 +59,10 @@ function formHandler() {
                     notify("please enter subject and subject before posting!");
                     return;
                 }
+//                fakeThread();
                 sendMessage(AUTHOR, MESSAGE, ROOMID, SLIDENUM);
-                formOut();
-                $("#post-container").css("display", "block");
+//                formOut();
+//                $("#plus-sign").css("display", "block");
                 $("#post-content").val("");
                 $("#post-subject").val("");
             }
@@ -77,7 +78,7 @@ function sendMessage(author, message, roomId, slideNum) {
                 'room' : roomId,
                 'slide' : slideNum,
             },
-            success : function() {
+            success: function() {
                 console.log("Succesfully sent message");
             },
             fail: function() {
@@ -88,15 +89,32 @@ function sendMessage(author, message, roomId, slideNum) {
 
 function buttonToggle() {
     formOut();
-    var $btnContainer = $("#post-container");
+    var $sign = $("#plus-sign");
     var $btn = $("#post-toggle");
     var $form = $("#post-form");
     $btn.bind({
         click: function() {
-            $btnContainer.css("display", "none");
+            $sign.css("display", "none");
+            openButton($btn);
             formIn();
         },
     });
+}
+
+function openButton($btn) {
+    $btn.velocity(
+        {
+            width: "95%",
+            borderRadius: "5px"
+        },
+        {
+            duration: 400,
+        }
+    );
+}
+
+function closeButton() {
+    $("#post-toggle").velocity("reverse");
 }
 
 function threadHandler() {
@@ -107,11 +125,6 @@ function threadHandler() {
         }
     });
 }
-
-
-
-
-
 
 
 
@@ -141,7 +154,10 @@ function fadeIn($dom) {
 
 function formIn() {
     $("#post-form").velocity(
-        { opacity: "0.6"
+        {
+            display: "block",
+            opacity: "0.6",
+            height: "auto"
         },
         {
             duration: 300,
@@ -152,10 +168,26 @@ function formIn() {
 
 function formOut() {
     $("#post-form").velocity(
-        { opacity: "none" },
+        { opacity: "none",
+           display: "none"
+        },
         {
             duration: 300,
             easing: "easeInSine"
         }
     );
+}
+
+function fakeThread() {
+   var $thread = $("<div>", {"class": "thread-container"});
+   var $content = $("<div>", {"class": "thread-content"});
+   var $color = $("<div>", {"class": "thread-background"});
+   $content.html("blah blah balh blah");
+   var $author = $("<div>", {"class": "thread-author"});
+   $author.html("author");
+   $thread.append($color)
+        .append($author)
+        .append($content);
+   $("#discussion-content").append($thread);
+   $thread.velocity("fadeIn", {duration: 500});
 }

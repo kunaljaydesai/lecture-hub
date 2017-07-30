@@ -37,7 +37,7 @@ function addThread(data) {
         .append($author)
         .append($content);
    $("#discussion-content").append($thread);
-   $thread.velocity("fadeIn", {duration: 500}).velocity("slidUp", {duration: 500});
+//   $thread.velocity("fadeIn", {duration: 500});
 }
 
 

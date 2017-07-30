@@ -131,6 +131,7 @@ body {
     height: calc(100% - 50px - 70px);
 }
 
+
 .thread-container {
     position: relative;
     width: calc(100% - 6px);
@@ -145,7 +146,6 @@ body {
     box-shadow: 4px 4px 10px #808080;
     width: calc(100% - 6px);
     height: 100%;
-
 }
 
 .thread-author {
@@ -206,26 +206,32 @@ body {
     text-align: center;
     vertical-align: middle;
     line-height: 50px;
-    z-index: 20;
+    z-index: 100;
 }
 
 #post-toggle {
     display: inline-block;
-    color: #F0F3F4;
-    font-size: 20px;
+}
+
+#plus-sign {
+     color: #F0F3F4;
+     font-size: 20px;
 }
 
 /*   form  */
 
+#form-title {
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 #post-form {
     height: auto;
     width: calc(100% - 20px);
-    padding: 20px;
-    position: absolute;
-    bottom: 0;
+    top: 0;
+    position: relative;
+    padding: 2px;
     background: transparent;
-    opacity: 0;
-    z-index: 0;
 }
 
 #post-subject {
