@@ -19,7 +19,6 @@ public class Satori {
 
     static private RtmClient client = null;
 
-    static private String channel = "hello";
 
     public Satori() {
         final RtmClientBuilder builder = new RtmClientBuilder(endpoint, appkey)
@@ -68,37 +67,9 @@ public class Satori {
         client.start();
     }
 
-    public void retrieveAndPublish(Message msg) {
+    public void publish(Message msg) {
 
-        // At this point, the client may not yet be connected to Satori RTM.
-        // If the client is not connected, the SDK internally queues the subscription request and
-        // will send it once the client connects
-        client.createSubscription(channel, SubscriptionMode.SIMPLE,
-                new SubscriptionAdapter() {
-                    @Override
-                    public void onEnterSubscribed(SubscribeRequest request, SubscribeReply reply) {
-                        // when subscription is established (confirmed by RTM)
-                        System.out.println("Subscribed to the channel: " + channel);
-                    }
-
-                    @Override
-                    public void onSubscriptionError(SubscriptionError error) {
-                        // when a subscribe or subscription error occurs
-                        System.out.println("Failed to subscribe: " + error.getReason());
-                    }
-
-                    @Override
-                    public void onSubscriptionData(SubscriptionData data) {
-                        // when incoming messages arrive
-                        for (AnyJson json : data.getMessages()) {
-                            try {
-                                System.out.println("Message is received: " + msg);
-                            } catch (Exception ex) {
-                                System.out.println("Failed to parse incoming message: " + json);
-                            }
-                        }
-                    }
-                });
+        String channel = msg.getRoomName();
 
         // At this point, the client may not yet be connected to Satori RTM.
         // If the client is not connected, the SDK internally queues the publish request and

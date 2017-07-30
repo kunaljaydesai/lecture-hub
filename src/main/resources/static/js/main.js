@@ -16,8 +16,10 @@ $(function() {
 
     var $chat = $("#chat-input");
 
-    $("#chat-input").keyup(function(e) {
-    	console.log("hello");
+    $("#chat-input").bind({
+        keyUp: function() {
+            console.log("typing");
+        },
     });
 
     $("#join-button").on('click', function() {
@@ -25,12 +27,27 @@ $(function() {
         $('.mini.modal').modal('hide').modal('hide dimmer');
     });
 
-    $("#chat-post").on('click', function() {
-        var message = $("#chat-input").value();
-        sendMessage(author, message, roomId, slideNum);
+    $("#author-name").bind({
+        keypress: function(e) {
+            if (!e) e = window.event;
+            var keyCode = e.keyCode || e.which;
+            if (keyCode == '13') {
+                author = $("#author-name").val();
+                $('.mini.modal').modal('hide').modal('hide dimmer');
+            }
+        }
     });
 
-    function sendMessage(author, message, roomId, slideNum) {
+    $("#chat-post").on('click', function() {
+        var message = $("#chat-input").val();
+        sendMessage(author, message, roomId, slideNum);
+        $("#chat-input").val("");
+    });
+
+});
+
+
+function sendMessage(author, message, roomId, slideNum) {
         $.ajax({
             url : '/api/chat/addMessage',
             data : {
@@ -46,6 +63,5 @@ $(function() {
                 console.log("Failed to send");
             }
         });
-    }
+}
 
-});

@@ -4,6 +4,7 @@ import model.Room;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import util.Application;
 import util.Database;
@@ -22,23 +23,24 @@ public class InterfaceHandler {
 
 
     @RequestMapping("/r/{roomId}")
-    public ModelAndView getRoom(@PathVariable String roomId) {
+    public ModelAndView getRoom(@PathVariable String roomId, @RequestParam(value="file", required=false) String pdf) {
         Application.logger.debug("Accessing room " + roomId + "...");
         Room r = Database.getRoom(new Room(roomId));
-        Application.logger.debug("Room is " + r.toString());
-        if (r == null) {
-            Application.logger.debug("Couldn't find room " + roomId);
-            return new ModelAndView("error");
-        }
         ModelAndView roomView = new ModelAndView("index");
         roomView.addObject("id", roomId);
+        pdf = "/files/" + pdf;
+        roomView.addObject("src", pdf);
         return roomView;
     }
 
-    @RequestMapping("/room/instructor")
-    public ModelAndView getInstructorView() {
-        Application.logger.debug("Accessed instructor view...");
-        return new ModelAndView("instructor");
+    @RequestMapping("/r/{roomId}/instructor")
+    public ModelAndView getInstructorView(@PathVariable String roomId, @RequestParam(value="file", required=false) String pdf) {
+        Room r = Database.getRoom(new Room(roomId));
+        ModelAndView roomView = new ModelAndView("instructor");
+        roomView.addObject("id", roomId);
+        pdf = "/files/" + pdf;
+        roomView.addObject("src", pdf);
+        return roomView;
     }
 
 }

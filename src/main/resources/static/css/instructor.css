@@ -3,6 +3,7 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
+    background: #F0F3F4;
 }
 
 .layer-1 {
@@ -35,13 +36,26 @@ body {
     position: relative;
 }
 
+.instructor {
+    font-size: calc(1vw);
+    color: #FFF;
+    top: 0px;
+    position: fixed;
+    right: 100px;
+}
+
+.slide-header {
+    position: relative;
+}
+
 
 /*******************************************************/
 /*   helper classes */
 /*******************************************************/
 
 .underHeader {
-    height: calc(100vh - 60px);
+    height: calc(50% - 30px);
+    background-color: #FFF;
 }
 
 
@@ -54,6 +68,7 @@ body {
     background: #F0F3F4;
     position: relative;
     float: right;
+    clear: both;
     height: 100vh;
     width: 70vw;
     overflow: hidden;
@@ -94,7 +109,6 @@ body {
 
 .discussion-header {
     top: 0;
-    position: relative;
     height: 50px;
     width: 100%;
     background: #FA8500;
@@ -119,39 +133,14 @@ body {
     right: 15px;
 }
 
-/* calc height using chat-container height */
-#discussion-content {
-    position: relative;
-    overflow-y: scroll;
-    width: 100%;
-    height: calc(100% - 70px);
-}
-
-.post-container {
+.discussion-content {
     position: relative;
     width: 100%;
-    height: auto;
 }
 
-.post-sender {
-    display: inline-block;
+.scroll-header {
     position: relative;
-    float: left;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    vertical-align: middle;
-    padding: 5px;
 }
-
-.post-content {
-    display: inline-block;
-    position: relative;
-    max-width: calc(100% - 60px);
-    margin-right: 5px;
-    vertical-align: top;
-}
-
 
 /*******************************************************/
 /*   chat container  */
@@ -159,10 +148,9 @@ body {
 
 .chat-container {
     position: absolute;
-    bottom: 0;
+    bottom: calc(50% - 25vh);
     width: calc(100% - 2px);
     height: 70px;
-    border: 1px solid #F0F3F4;
 }
 
 .container-color {
@@ -177,7 +165,6 @@ body {
     display: inline-block;
     position: relative;
     height: 100%;
-
     vertical-align: middle;
 }
 
@@ -202,6 +189,59 @@ input[type=text], select {
     outline: none;
 }
 
-#modal-content {
-    text-align: center;
+/*******************************************************/
+/*   question container  */
+/*******************************************************/
+.question-container {
+    bottom: calc(50% - 17vh);
+    left: 0;
+    width: 30vw;
+    position: fixed;
+}
+
+.bottomFooter {
+    height: calc(50% - 60px);
+    background-color: #FFF;
+    bottom: 10px;
+}
+
+.all-chat {
+    border: 0px solid #000;
+    overflow: scroll;
+    height: 80%;
+    
+}
+
+.topics-list {
+    position: fixed;
+    display: inline-block;
+    /*height: 100%;*/
+    /*line-height: 100%;*/
+    /*vertical-align: middle;*/
+    left: 35px;
+}
+
+.topics-container {
+    position: relative;
+    width: calc(100% - 2px);
+    height: 70px;
+}
+
+.topics-container:hover {
+    box-shadow: 1px 1px #8c8b8b;
+}
+.topic {
+    font-size: 14px;
+    position: relative;
+    left: 1vw;
+    display: inline-block;
+}
+
+
+.counter {
+    position: relative;
+    display: inline-table;
+    left: -20px;
+    float: right;
+
 }
