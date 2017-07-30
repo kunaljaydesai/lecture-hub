@@ -2,6 +2,7 @@ package controller;
 
 import model.Message;
 import model.Room;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +12,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 import java.net.HttpURLConnection;
+import java.util.List;
 
 /**
  * Created by KunalDesai on 7/29/17.
@@ -71,6 +73,12 @@ public class ChatHandler {
 
         m.pushToDatabase();
 
+        return "worked";
+    }
+
+    @RequestMapping("/api/chat/{roomId}/addQuiz")
+    public String addQuiz(@PathVariable String roomId, @RequestParam(value="question") String question, @RequestParam(value="options", required=false) List<String> options) {
+        //TODO Satori Support
         return "worked";
     }
 
