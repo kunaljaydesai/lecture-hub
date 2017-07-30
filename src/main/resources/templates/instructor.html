@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" > </meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> </meta>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> </link>
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- paths -->
+
+    <link rel="stylesheet" type="text/css" href="../../css/instructor.css"></link>
+    <script type="text/javascript" src="../../js/instructor.css"> </script>
+
+</head>
+<body>
+    <div class="header layer-1">
+        <div class="logo">
+            lecture-hub
+        </div>
+        <div class = "instructor">
+        	<h1>Instructor View</h1>
+        </div>
+    </div>
+    <div class="main-view layer-2">
+        <div class="slide-show">
+            <div data-index="0" class="slide-container">
+                <img class="slide" src="../../img/demo-slide.jpg"> </img>
+            </div>
+            <div data-index="1" class="slide-container">
+                <img class="slide"> </img>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-nav underHeader layer-1"> </div>
+
+    <div class="discussion-container underHeader layer-1">
+
+        <!-- header -->
+        <div class="discussion-header slide-number">
+            <div class="discussion-name padding-left" > Discussion </div>
+            <div class="slide-info padding-right"> Slide 1 </div>
+        </div>
+
+        <!-- content -->
+        <div class="discussion-content">
+
+        </div>
+
+        <!-- chat -->
+        <div class="container-color chat-container"> </div>
+        <div class="chat-container layer-1">
+            <input id="chat-input" type="text" placeholder="Have a burning question?" > </input>
+            <!-- <form id="chat-main">  -->
+
+            <input id="chat-enter" type="submit" style="display:none;"> </input>
+            <!-- </form> -->
+        </div>
+    </div>
+
+    <div class="question-container bottomFooter layer-1">
+
+        <!-- Topics header -->
+        <div class="discussion-header scroll-header">
+            <div class="topics-list" > Common Topics </div>
+        </div>
+        <div class = "all-chat">
+            <div class = "topics-container">
+            	<h5 class = "topic"> Algorithms </h5>
+                <h5 class = "topic counter">25 </h5><hr class = "topic-border"></hr>
+            </div>
+            <div class = "topics-container">
+            	<h5 class = "topic">  Big 'O' Notation</h5>
+                <h5 class = "topic counter">20 </h5><hr class = "topic-border"></hr>
+            </div>
+            <div class = "topics-container">
+            	<h5 class = "topic"> Monopoly</h5>
+                <h5 class = "topic counter">17 </h5><hr class = "topic-border"></hr>
+            </div>
+            <div class = "topics-container">
+            	<h5 class = "topic"> Free Market</h5>
+            	<h5 class = "topic counter">14 </h5>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
