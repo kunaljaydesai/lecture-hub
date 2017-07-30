@@ -5,8 +5,10 @@ var ROOMID;
 
 
 $(function() {
-    var windowLocation = window.location.href;
     ROOMID = $("#info").data("channel");
+    init();
+    var windowLocation = window.location.href;
+
     console.log("Document loaded...");
     $('.mini.modal').modal('show');
     var COLORS = {
@@ -24,6 +26,44 @@ $(function() {
 
 
 });
+
+function init() {
+    $("#fixedbutton").on('click', function() {
+        //show modal
+        $("#instructor-quiz").modal('show');
+    });
+
+    $("#add-option").on('click', function() {
+        var option = $("#new-option").val();
+        $("#option-list").append('<input type="radio" name="radio" checked="checked"><label class=option-labels>' + option + '</label>')
+        $("#new-option").val("");
+    });
+
+    $("#publish-quiz").on('click', function() {
+        var options = [];
+        $('.option-labels').each(function () {
+            options.push($(this).text());
+            console.log(options);
+        }).promise().done(function() {
+            var question = $("#new-question").val();
+            $.ajax({
+                url : "/api/chat/" + ROOMID + "/addQuiz",
+                data : {
+                    'options' : JSON.stringify(options),
+                    'question' : question,
+                },
+                success : function(data) {
+                    console.log("Quiz succesfully published");
+                    $("#new-question").val("");
+                    $("#option-list").empty();
+                }
+            });
+        });
+
+    });
+
+
+}
 
 
 

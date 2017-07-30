@@ -1,10 +1,7 @@
 package controller;
 
 import model.*;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import util.Application;
 
 import java.net.URL;
@@ -21,9 +18,9 @@ import java.util.List;
 public class ChatHandler {
 
     @RequestMapping("/api/chat/addMessage")
-    public Message publishMessage(@RequestParam(value="msg", required=true) String message, @RequestParam(value="author", required=true)
-            String author, @RequestParam(value="room", required=true) String roomName, @RequestParam(value="slide", required=true) int slideNum) throws Exception{
-        Message m = new Message(roomName, message, author, slideNum);
+    public @ResponseBody Message publishMessage(@RequestParam(value="msg", required=true) String message, @RequestParam(value="author", required=true)
+            String author, @RequestParam(value="room", required=true) String roomName, @RequestParam(value="slide", required=true) int slideNum, @RequestParam(value="subject", required=false) String subject) throws Exception{
+        Message m = new Message(roomName, message, author, slideNum, subject);
 
         boolean question = false;
         for (int i = 0; i < message.length(); i++) {
@@ -73,31 +70,17 @@ public class ChatHandler {
     }
 
     @RequestMapping("/api/chat/{roomId}/addQuiz")
-    public Quiz addQuiz(@PathVariable String roomId, @RequestParam(value="question") String question, @RequestParam(value="options", required=false) List<String> options) {
+    public @ResponseBody Quiz addQuiz(@PathVariable String roomId, @RequestParam(value="question") String question, @RequestParam(value="options", required=false) List<String> options) {
         Quiz q = new Quiz(question, options, roomId);
         Application.s.publish(q);
         return q;
     }
 
     @RequestMapping("/api/chat/{roomId}/quizResponse")
-    public QuizResponse addQuizResponse(@PathVariable String roomId, @RequestParam(value="id") String id, @RequestParam(value="response") String response) {
+    public @ResponseBody QuizResponse addQuizResponse(@PathVariable String roomId, @RequestParam(value="id") String id, @RequestParam(value="response") String response) {
         QuizResponse qr = new QuizResponse(id, response, roomId);
         Application.s.publish(qr);
         return qr;
-    }
-
-    @RequestMapping("/test/addingMessage")
-    public String addMessage() {
-        Message m = new Message("abc", "test", "test", 1);
-        m.pushToDatabase();
-        return "worked";
-    }
-
-    @RequestMapping("/test/addingRoom")
-    public String addRoom() {
-        Room r = new Room("a");
-        r.pushToDatabase();
-        return "worked";
     }
 
 }

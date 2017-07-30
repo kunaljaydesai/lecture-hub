@@ -7,6 +7,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> </link>
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"></link>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+
     <!-- paths -->
 
     <link rel="stylesheet" type="text/css" href="../../css/instructor.css"></link>
@@ -104,7 +107,37 @@
             </div>
         </div>
     </div>
+    <button id="fixedbutton" class="ui inverted blue button">Quiz</button>
+    <button id="fixedbutton2" class="ui inverted blue button">Quiz History</button>
+    <div id="instructor-quiz" class="ui modal">
+        <i class="close icon"></i>
+        <div class="header">
+            Create a Quiz
+        </div>
+        <div class="content">
+            <h3>Question</h3>
+            <div class="ui input">
+                <input id="new-question" type="text" placeholder="What is an abstract class?"></input>
+            </div>
+            <br></br>
+            <br></br>
+            <div class="ui radio checkbox" id="option-list">
 
+            </div>
+            <br></br>
+            <br></br>
+            <button class="ui inverted blue button" id="add-option">Add Option</button>
+            <div class="ui input">
+                <input id="new-option" type="text" placeholder="Yes"> </input>
+            </div>
+        </div>
+        <div class="actions">
+            <div id="publish-quiz" class="ui positive right labeled icon button">
+                Publish
+                <i class="checkmark icon"></i>
+            </div>
+        </div>
+    </div>
 
 </body>
 

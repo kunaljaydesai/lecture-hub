@@ -12,3 +12,5 @@ var $chat = $("#chat-input");
 $("#chat-input").keyup(function(e) {
 	console.log("hello");
 });
+
+

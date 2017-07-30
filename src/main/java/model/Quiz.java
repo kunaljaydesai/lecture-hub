@@ -25,4 +25,15 @@ public class Quiz implements SatoriPublisher {
         return roomName;
     }
 
+    public String getQuestion() {
+        return question;
+    }
+
+    public List<String> getOptions() {
+        return options;
+    }
+
+    public String getId() {
+        return id;
+    }
 }

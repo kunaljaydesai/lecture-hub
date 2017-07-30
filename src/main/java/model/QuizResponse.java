@@ -18,4 +18,12 @@ public class QuizResponse implements SatoriPublisher {
     public String getRoomName() {
         return roomName;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getResponse() {
+        return response;
+    }
 }
