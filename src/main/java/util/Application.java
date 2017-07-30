@@ -21,7 +21,7 @@ public class Application {
 
     public static void main(String[] args) throws SQLException {
         BasicConfigurator.configure();
-        Database db = new Database("jdbc:derby:lecturehub");
+        Database db = new Database("jdbc:derby:lecturehub;create=true");
         db.connect();
         db.createTables();
         SpringApplication.run(Application.class, args);
