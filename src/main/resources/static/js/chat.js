@@ -61,19 +61,24 @@ function loadQuiz(data) {
 
 
 function addThread(data) {
-   var $thread = $("<div>", {"class": "thread-container"});
-   var $content = $("<div>", {"class": "thread-content"});
-   var $color = $("<div>", {"class": "thread-background"});
-   $content.html(data.message);
-   var $author = $("<div>", {"class": "thread-author"});
-   $author.html(data.author);
-   $thread.append($color)
-        .append($author)
-        .append($content);
-   $("#discussion-content").append($thread);
-//   $thread.velocity("fadeIn", {duration: 500});
+    var $thread = $("<div>", {"class": "thread-container"});
+    var $subject = $("<div>", {"class": "thread-subject"});
+    var $content = $("<div>", {"class": "thread-content"});
+    var $color = $("<div>", {"class": "thread-background"});
+    var $status = $("<div>", {"class": "thread-status"});
+    $status.data("read");
+
+    $content.html(data.message);
+    var $author = $("<div>", {"class": "thread-author"});
+    $author.html(data.author);
+    $subject.html(data.subject);
+    $thread.append($color)
+            .append($author)
+            .append($subject)
+            .append($status)
+            .append($content);
+    $("#discussion-content").append($thread);
+   $thread.velocity("fadeIn", {duration: 500});
 }
-
-
 
 
