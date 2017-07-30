@@ -4,9 +4,7 @@ body {
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
     background: #F0F3F4;
-    color: #031D4A;
 }
-
 
 .layer-1 {
     z-index: 100;
@@ -38,13 +36,26 @@ body {
     position: relative;
 }
 
+.instructor {
+    font-size: calc(1vw);
+    color: #FFF;
+    top: 0px;
+    position: fixed;
+    right: 100px;
+}
+
+.slide-header {
+    position: relative;
+}
+
 
 /*******************************************************/
 /*   helper classes */
 /*******************************************************/
 
 .underHeader {
-    height: calc(100vh - 60px);
+    height: calc(50% - 30px);
+    background-color: #FFF;
 }
 
 
@@ -57,6 +68,7 @@ body {
     background: #F0F3F4;
     position: relative;
     float: right;
+    clear: both;
     height: 100vh;
     width: 70vw;
     overflow: hidden;
@@ -93,16 +105,14 @@ body {
     left: 0;
     width: 30vw;
     position: fixed;
-    margin-left: 20px;
 }
 
 .discussion-header {
     top: 0;
-    position: relative;
     height: 50px;
     width: 100%;
+    background: #FA8500;
     line-height: 50px;
-    background: transparent;
     vertical-align: middle;
 }
 
@@ -123,119 +133,50 @@ body {
     right: 15px;
 }
 
-/* calc height using disc-header + chat-container height */
-#discussion-content {
-    position: relative;
-    overflow-y: scroll;
-    width: 100%;
-    height: calc(100% - 50px - 70px);
-}
-
-.thread-container {
-    position: relative;
-    width: calc(100% - 6px);
-    margin-top: 20px;
-    height: 100px;
-}
-
-.thread-background {
-    position: absolute;
-    background: white;
-    opacity: 0.5;
-    box-shadow: 4px 4px 10px #808080;
-    width: calc(100% - 6px);
-    height: 100%;
-
-}
-
-.thread-author {
-    display: block;
-    position: relative;
-    float: left;
-    width: 100%;
-    height: 20px;
-    color: #D0D3D4;
-}
-
-.thread-subject {
-    font-weight: bold;
-}
-
-.thread-content {
-    display: block;
+.discussion-content {
     position: relative;
     width: 100%;
-    height: auto;
-    vertical-align: top;
-    color: black;
 }
 
+.scroll-header {
+    position: relative;
+}
 
 /*******************************************************/
 /*   chat container  */
 /*******************************************************/
 
-
-
-.full-width-center {
-    width: 100%;
-    text-align: center;
-}
-
-/*   container  */
-
-#post-container {
+.chat-container {
     position: absolute;
-    bottom: 0;
-    width: 100%;
+    bottom: calc(50% - 25vh);
+    width: calc(100% - 2px);
     height: 70px;
 }
 
 .container-color {
+    /*background: black;*/
     opacity: 0.3;
 }
 
-/*  button */
 
-.open-button {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    box-shadow: 4px 4px 10px #D0D0D0;
-    background: #2B92FF;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 50px;
-    z-index: 20;
-}
-
-#post-toggle {
+/* calc width: (100vw - slide-info width) */
+#chat-main {
+    width: 100%;
     display: inline-block;
-    color: #F0F3F4;
-    font-size: 20px;
+    position: relative;
+    height: 100%;
+    vertical-align: middle;
 }
 
-/*   form  */
-
-#post-form {
-    height: auto;
+#chat-input {
+    position: relative;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
     width: calc(100% - 20px);
-    padding: 20px;
-    position: absolute;
-    bottom: 0;
-    background: transparent;
-    opacity: 0;
-    z-index: 0;
+    /*width: 100%;*/
+    /*height: 50%;*/
 }
-
-#post-subject {
-
-}
-
-#post-content {
-
-}
-
 
 input[type=text] {
     /*width: 100%;*/
@@ -248,8 +189,59 @@ input[type=text], select {
     outline: none;
 }
 
-#modal-content {
-    text-align: center;
+/*******************************************************/
+/*   question container  */
+/*******************************************************/
+.question-container {
+    bottom: calc(50% - 17vh);
+    left: 0;
+    width: 30vw;
+    position: fixed;
+}
+
+.bottomFooter {
+    height: calc(50% - 60px);
+    background-color: #FFF;
+    bottom: 10px;
+}
+
+.all-chat {
+    border: 0px solid #000;
+    overflow: scroll;
+    height: 80%;
+    
+}
+
+.topics-list {
+    position: fixed;
+    display: inline-block;
+    /*height: 100%;*/
+    /*line-height: 100%;*/
+    /*vertical-align: middle;*/
+    left: 35px;
+}
+
+.topics-container {
+    position: relative;
+    width: calc(100% - 2px);
+    height: 70px;
+}
+
+.topics-container:hover {
+    box-shadow: 1px 1px #8c8b8b;
+}
+.topic {
+    font-size: 14px;
+    position: relative;
+    left: 1vw;
+    display: inline-block;
 }
 
 
+.counter {
+    position: relative;
+    display: inline-table;
+    left: -20px;
+    float: right;
+
+}
