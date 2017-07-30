@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a749d89a-f2bd-41e8-8df6-a57b7b5cf57f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/ChatHandler.class" afterPath="$PROJECT_DIR$/target/classes/controller/ChatHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/InterfaceHandler.class" afterPath="$PROJECT_DIR$/target/classes/controller/InterfaceHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/util/Application.class" afterPath="$PROJECT_DIR$/target/classes/util/Application.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lecturehub.iml" afterPath="$PROJECT_DIR$/lecturehub.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/ChatHandler.java" afterPath="$PROJECT_DIR$/src/main/java/controller/ChatHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/InterfaceHandler.java" afterPath="$PROJECT_DIR$/src/main/java/controller/InterfaceHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/Message.java" afterPath="$PROJECT_DIR$/src/main/java/model/Message.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/Room.java" afterPath="$PROJECT_DIR$/src/main/java/model/Room.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/Satori.java" afterPath="$PROJECT_DIR$/src/main/java/model/Satori.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/util/Application.java" afterPath="$PROJECT_DIR$/src/main/java/util/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/util/Database.java" afterPath="$PROJECT_DIR$/src/main/java/util/Database.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,8 +18,8 @@
       <file leaf-file-name="ChatHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/ChatHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="270">
+              <caret line="33" column="9" lean-forward="true" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,19 +42,23 @@
       <file leaf-file-name="Message.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/Message.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="14" column="78" lean-forward="true" selection-start-line="14" selection-start-column="78" selection-end-line="14" selection-end-column="78" />
+            <state relative-caret-position="293">
+              <caret line="52" column="128" lean-forward="false" selection-start-line="52" selection-start-column="128" selection-end-line="52" selection-end-column="128" />
               <folding>
-                <element signature="e#476#477#0" expanded="true" />
-                <element signature="e#517#518#0" expanded="true" />
-                <element signature="e#551#552#0" expanded="true" />
-                <element signature="e#581#582#0" expanded="true" />
+                <element signature="e#509#510#0" expanded="true" />
+                <element signature="e#550#551#0" expanded="true" />
+                <element signature="e#584#585#0" expanded="true" />
                 <element signature="e#614#615#0" expanded="true" />
-                <element signature="e#643#644#0" expanded="true" />
-                <element signature="e#678#679#0" expanded="true" />
-                <element signature="e#709#710#0" expanded="true" />
-                <element signature="e#744#745#0" expanded="true" />
-                <element signature="e#778#779#0" expanded="true" />
+                <element signature="e#647#648#0" expanded="true" />
+                <element signature="e#676#677#0" expanded="true" />
+                <element signature="e#711#712#0" expanded="true" />
+                <element signature="e#742#743#0" expanded="true" />
+                <element signature="e#777#778#0" expanded="true" />
+                <element signature="e#811#812#0" expanded="true" />
+                <element signature="e#845#846#0" expanded="true" />
+                <element signature="e#875#876#0" expanded="true" />
+                <element signature="e#921#922#0" expanded="true" />
+                <element signature="e#959#960#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,8 +67,8 @@
       <file leaf-file-name="Satori.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/model/Satori.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="73" column="31" lean-forward="true" selection-start-line="73" selection-start-column="31" selection-end-line="73" selection-end-column="31" />
+            <state relative-caret-position="210">
+              <caret line="80" column="67" lean-forward="true" selection-start-line="80" selection-start-column="67" selection-end-line="80" selection-end-column="67" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1568#1569#0" expanded="true" />
@@ -124,7 +119,7 @@
       <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/util/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
+            <state relative-caret-position="329">
               <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -163,6 +158,7 @@
         <option value="$PROJECT_DIR$/../lecturehub_satori/src/main/java/com/mycompany/Program.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Satori.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/Message.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/ChatHandler.java" />
       </list>
     </option>
@@ -382,12 +378,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1501359770813</updated>
-      <workItem from="1501359772297" duration="11560000" />
+      <workItem from="1501359772297" duration="17514000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11560000" />
+    <option name="totallyTimeSpent" value="17514000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="91" y="23" width="1179" height="686" extended-state="0" />
@@ -478,6 +474,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/InterfaceHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../lecturehub_satori/src/main/java/com/mycompany/Program.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2025">
@@ -494,22 +510,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/InterfaceHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Message.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="293">
+          <caret line="52" column="128" lean-forward="false" selection-start-line="52" selection-start-column="128" selection-end-line="52" selection-end-column="128" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#509#510#0" expanded="true" />
+            <element signature="e#550#551#0" expanded="true" />
+            <element signature="e#584#585#0" expanded="true" />
+            <element signature="e#614#615#0" expanded="true" />
+            <element signature="e#647#648#0" expanded="true" />
+            <element signature="e#676#677#0" expanded="true" />
+            <element signature="e#711#712#0" expanded="true" />
+            <element signature="e#742#743#0" expanded="true" />
+            <element signature="e#777#778#0" expanded="true" />
+            <element signature="e#811#812#0" expanded="true" />
+            <element signature="e#845#846#0" expanded="true" />
+            <element signature="e#875#876#0" expanded="true" />
+            <element signature="e#921#922#0" expanded="true" />
+            <element signature="e#959#960#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/Application.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Satori.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="210">
+          <caret line="80" column="67" lean-forward="true" selection-start-line="80" selection-start-column="67" selection-end-line="80" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1568#1569#0" expanded="true" />
+            <element signature="e#1658#1659#0" expanded="true" />
+            <element signature="e#3031#3032#0" expanded="true" />
+            <element signature="e#3126#3127#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -530,43 +563,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Satori.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="73" column="31" lean-forward="true" selection-start-line="73" selection-start-column="31" selection-end-line="73" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1568#1569#0" expanded="true" />
-            <element signature="e#1658#1659#0" expanded="true" />
-            <element signature="e#3031#3032#0" expanded="true" />
-            <element signature="e#3126#3127#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="14" column="78" lean-forward="true" selection-start-line="14" selection-start-column="78" selection-end-line="14" selection-end-column="78" />
-          <folding>
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#517#518#0" expanded="true" />
-            <element signature="e#551#552#0" expanded="true" />
-            <element signature="e#581#582#0" expanded="true" />
-            <element signature="e#614#615#0" expanded="true" />
-            <element signature="e#643#644#0" expanded="true" />
-            <element signature="e#678#679#0" expanded="true" />
-            <element signature="e#709#710#0" expanded="true" />
-            <element signature="e#744#745#0" expanded="true" />
-            <element signature="e#778#779#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/ChatHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="270">
+          <caret line="33" column="9" lean-forward="true" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

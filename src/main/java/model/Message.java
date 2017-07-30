@@ -11,6 +11,7 @@ public class Message {
     private String author;
     private String roomName;
     private int slideNumber;
+    private String article = "";
 
     public Message(String roomName, String msg, String author, int slideNumber) {
         this.message = msg;
@@ -39,8 +40,16 @@ public class Message {
         return slideNumber;
     }
 
+    public String getArticle() {
+        return article;
+    }
+
+    public void addArticle(String article) {
+        this.article = article;
+    }
+
     @Override
     public String toString() {
-        return "(" + getAuthor() + ", " + getRoomName() + ", " + getMessage() + ", " + getSlideNumber() + ")";
+        return "(" + getAuthor() + ", " + getRoomName() + ", " + getMessage() + ", " + getSlideNumber() + ", " + getArticle() + ")";
     }
 }
