@@ -3,7 +3,10 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
+    background: #F0F3F4;
+    color: #031D4A;
 }
+
 
 .layer-1 {
     z-index: 100;
@@ -87,6 +90,7 @@ body {
     left: 0;
     width: 30vw;
     position: fixed;
+    margin-left: 20px;
 }
 
 .discussion-header {
@@ -94,8 +98,8 @@ body {
     position: relative;
     height: 50px;
     width: 100%;
-    background: #FA8500;
     line-height: 50px;
+    background: transparent;
     vertical-align: middle;
 }
 
@@ -116,37 +120,51 @@ body {
     right: 15px;
 }
 
-/* calc height using chat-container height */
+/* calc height using disc-header + chat-container height */
 #discussion-content {
     position: relative;
     overflow-y: scroll;
     width: 100%;
-    height: calc(100% - 70px);
+    height: calc(100% - 50px - 70px);
 }
 
-.post-container {
+.thread-container {
+    position: relative;
+    width: calc(100% - 6px);
+    margin-top: 20px;
+    height: 100px;
+}
+
+.thread-background {
+    position: absolute;
+    background: white;
+    opacity: 0.5;
+    box-shadow: 4px 4px 10px #808080;
+    width: calc(100% - 6px);
+    height: 100%;
+
+}
+
+.thread-author {
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 20px;
+    color: #D0D3D4;
+}
+
+.thread-subject {
+    font-weight: bold;
+}
+
+.thread-content {
+    display: block;
     position: relative;
     width: 100%;
     height: auto;
-}
-
-.post-sender {
-    display: inline-block;
-    position: relative;
-    float: left;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    vertical-align: middle;
-    padding: 5px;
-}
-
-.post-content {
-    display: inline-block;
-    position: relative;
-    max-width: calc(100% - 60px);
-    margin-right: 5px;
     vertical-align: top;
+    color: black;
 }
 
 
@@ -154,39 +172,67 @@ body {
 /*   chat container  */
 /*******************************************************/
 
-.chat-container {
+
+
+.full-width-center {
+    width: 100%;
+    text-align: center;
+}
+
+/*   container  */
+
+#post-container {
     position: absolute;
     bottom: 0;
-    width: calc(100% - 2px);
+    width: 100%;
     height: 70px;
-    border: 1px solid #F0F3F4;
 }
 
 .container-color {
-    /*background: black;*/
     opacity: 0.3;
 }
 
+/*  button */
 
-/* calc width: (100vw - slide-info width) */
-#chat-main {
-    width: 100%;
-    display: inline-block;
-    position: relative;
-    height: 100%;
-
+.open-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 4px 4px 10px #D0D0D0;
+    background: #2B92FF;
+    text-align: center;
     vertical-align: middle;
+    line-height: 50px;
+    z-index: 20;
 }
 
-#chat-input {
-    position: relative;
+#post-toggle {
     display: inline-block;
-    padding-left: 10px;
-    padding-right: 10px;
-    width: calc(100% - 20px);
-    /*width: 100%;*/
-    /*height: 50%;*/
+    color: #F0F3F4;
+    font-size: 20px;
 }
+
+/*   form  */
+
+#post-form {
+    height: auto;
+    width: calc(100% - 20px);
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    background: transparent;
+    opacity: 0;
+    z-index: 0;
+}
+
+#post-subject {
+
+}
+
+#post-content {
+
+}
+
 
 input[type=text] {
     /*width: 100%;*/
@@ -202,3 +248,5 @@ input[type=text], select {
 #modal-content {
     text-align: center;
 }
+
+

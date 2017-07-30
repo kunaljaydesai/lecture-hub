@@ -15,11 +15,10 @@ $(function() {
 
     subscription.on('rtm/subscription/data', function (pdu) {
         pdu.body.messages.forEach(function (msg) {
-            addPost(msg);
+            addThread(msg);
+            console.log(msg);
         });
     });
-
-
 
     client.start();
 
@@ -27,14 +26,20 @@ $(function() {
 
 
 
-function addPost(data) {
-   var $post = $("<div>", {"class": "post-container"});
-   var $content = $("<div>", {"class": "post-content"});
+function addThread(data) {
+   var $thread = $("<div>", {"class": "thread-container"});
+   var $content = $("<div>", {"class": "thread-content"});
+   var $color = $("<div>", {"class": "thread-background"});
    $content.html(data.message);
-   var $author = $("<div>", {"class": "post-sender"});
+   var $author = $("<div>", {"class": "thread-author"});
    $author.html(data.author);
-   $post.append($author)
+   $thread.append($color)
+        .append($author)
         .append($content);
-   $("#discussion-content").append($post);
+   $("#discussion-content").append($thread);
+   $thread.velocity("fadeIn", {duration: 500}).velocity("slidUp", {duration: 500});
 }
+
+
+
 
