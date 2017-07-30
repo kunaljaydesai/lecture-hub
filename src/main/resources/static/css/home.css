@@ -123,3 +123,15 @@ body {
     font-size: 14px;
     text-align: center;
 }
+
+#modal-content {
+    text-align: center;
+}
+
+#create-button {
+    height: 40px;
+}
+
+#lecture-upload {
+    height: 40px;
+}

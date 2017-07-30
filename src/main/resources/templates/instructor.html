@@ -14,7 +14,8 @@
 
 </head>
 <body>
-    <div class="header layer-1">
+    <div id="info" th:attr="data-channel=${id}" style="display: none"> </div>
+    <div class="page_header layer-1">
         <div class="logo">
             lecture-hub
         </div>
@@ -25,7 +26,7 @@
     <div class="main-view layer-2">
         <div class="slide-show">
             <div data-index="0" class="slide-container">
-                <img class="slide" src="../../img/demo-slide.jpg"> </img>
+                <iframe id="pdf" style="border:1px solid #666CCC" title="PDF" th:src="${src}" src="/files/aakash1.pdf" frameborder="1" scrolling="auto" height="1100" width="850" ></iframe>
             </div>
             <div data-index="1" class="slide-container">
                 <img class="slide"> </img>

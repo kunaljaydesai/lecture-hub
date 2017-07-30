@@ -33,10 +33,14 @@ public class InterfaceHandler {
         return roomView;
     }
 
-    @RequestMapping("/room/instructor")
-    public ModelAndView getInstructorView() {
-        Application.logger.debug("Accessed instructor view...");
-        return new ModelAndView("instructor");
+    @RequestMapping("/r/{roomId}/instructor")
+    public ModelAndView getInstructorView(@PathVariable String roomId, @RequestParam(value="file", required=false) String pdf) {
+        Room r = Database.getRoom(new Room(roomId));
+        ModelAndView roomView = new ModelAndView("instructor");
+        roomView.addObject("id", roomId);
+        pdf = "/files/" + pdf;
+        roomView.addObject("src", pdf);
+        return roomView;
     }
 
 }

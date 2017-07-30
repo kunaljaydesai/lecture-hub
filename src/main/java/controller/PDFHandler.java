@@ -58,6 +58,7 @@ public class PDFHandler {
         storageService.store(file);
         redirectAttributes.addFlashAttribute("message",
                 "You successfully uploaded " + file.getOriginalFilename() + "!");
+        System.out.println("You have succesfully uploaded a file.");
 
         return "redirect:/";
     }
