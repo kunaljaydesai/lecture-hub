@@ -18,7 +18,20 @@
 
     <link rel="stylesheet" type="text/css" href="../../css/instructor.css"></link>
     <script src="https://satori-a.akamaihd.net/satori-rtm-sdk/v1.0.2/sdk.min.js"></script>
-
+    <script src="../../js/clipboard.min.js"></script>
+    <script>
+        var btns = document.querySelectorAll('button');
+        var clipboard = new Clipboard(btns);
+        clipboard.on('success', function(e) {
+            console.log(e);
+        });
+        clipboard.on('error', function(e) {
+            console.log(e);
+        });
+        var address = window.location.href
+        var newAddress = address.replace('/instructor', '');
+        document.getElementById("foo").value = newAddress;
+    </script>
 </head>
 <body>
     <div id="info" th:attr="data-channel=${id}" style="display: none"> </div>
@@ -30,6 +43,7 @@
         <div id="fixedbutton">
             <button style="float: right;" class="ui inverted blue button" id="quiz-button">Quiz</button>
             <button style="float: right;" class="ui inverted blue button" id="quiz-stats-button">Quiz Stats</button>
+            
         </div>
         <div class="target"></div>
     </div>
@@ -86,7 +100,7 @@
                 <!--<input id="post-content" class="form-input" type="text" placeholder="question..."> </input>
                 <div id="chat-post" class="form-submit"> <div class="index-color"> </div> + </div>-->
                 <div class="ui action input">
-                    <input class="form-input" type="text" placeholder="Type message..."></input>
+                    <input id="evelyn" class="form-input" type="text" placeholder="Type message..."></input>
                     <button style="float: right" class="ui button">Search</button>
                 </div>
             </div>
