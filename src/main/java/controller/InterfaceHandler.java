@@ -14,6 +14,13 @@ import util.Database;
 @Controller
 public class InterfaceHandler {
 
+    @RequestMapping("/")
+    public ModelAndView getHome() {
+        Application.logger.debug("Accessed home view...");
+        return new ModelAndView("home");
+    }
+
+
     @RequestMapping("/r/{roomId}")
     public ModelAndView getRoom(@PathVariable String roomId) {
         Application.logger.debug("Accessing room " + roomId + "...");
