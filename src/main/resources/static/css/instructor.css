@@ -31,7 +31,7 @@ iframe {
 .page_header {
     width: 100vw;
     height: 60px;
-    background: #031D4A;
+    background: transparent;
 }
 
 .logo {
@@ -43,7 +43,7 @@ iframe {
 
 .instructor {
     font-size: calc(1vw);
-    color: #FFF;
+    color: #FA8500;
     top: 0px;
     position: fixed;
     right: 100px;
@@ -69,13 +69,13 @@ iframe {
 
 
 .slide-show {
-    position: relative;
-    float: right;
+    position: absolute;
     clear: both;
     height: 100vh;
     width: 70vw;
     overflow: hidden;
     overflow-y: scroll;
+    right: -60px;
 }
 
 .slide-container {
@@ -430,11 +430,11 @@ iframe {
 }
 
 #fixedbutton {
-    position: fixed;
-    bottom: 0px;
-    right: 0px;
-    margin-right: 20px;
-    margin-bottom: 5px;
+    position: absolute;
+    top: 14px;
+    right: 650px;
+    margin-right: -4px;
+    margin-bottom: -7px;
     height: 50px;
     width: 80px;
     display: inline-block;
@@ -447,9 +447,7 @@ iframe {
 }
 
 #instructor-tag {
-
     font-size: 25px;
-
     margin-top: 19px;
     margin-right: -73px;
 }
