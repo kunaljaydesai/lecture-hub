@@ -30,6 +30,9 @@ body {
 
 .logo {
     color: white;
+    top: 35%;
+    left: 2vw;
+    position: relative;
 }
 
 
