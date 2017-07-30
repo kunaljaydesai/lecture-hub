@@ -443,3 +443,9 @@ input[type=text], select {
 }
 
 
+#student-tag {
+    font-size: 25px;
+    margin-top: -63px;
+    position: absolute;
+    left: calc(100% - 15%);
+}
