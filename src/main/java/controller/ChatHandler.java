@@ -77,7 +77,7 @@ public class ChatHandler {
     }
 
     @RequestMapping("/api/chat/{roomId}/quizResponse")
-    public @ResponseBody QuizResponse addQuizResponse(@PathVariable String roomId, @RequestParam(value="id") String id, @RequestParam(value="response") String response) {
+    public @ResponseBody QuizResponse addQuizResponse(@PathVariable String roomId, @RequestParam(value="id", required=false) String id, @RequestParam(value="response") String response) {
         QuizResponse qr = new QuizResponse(id, response, roomId);
         Application.s.publish(qr);
         return qr;
