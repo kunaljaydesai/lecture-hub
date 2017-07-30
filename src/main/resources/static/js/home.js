@@ -1,23 +1,21 @@
 $(document).ready(function() {
+    var fileUploadName = "test.pdf";
     $("#button1").on('click', function() {
-        console.log("Button 1 was clicked!");
         $.ajax({ type: 'GET',
             url: '/api/addRoom',
             datatype:'json',
             success : function(data)
             {
-                console.log(data);
+                fileUploadname = $("#lecture-upload").val();
                 var room = data.name;
-                location.href = "/r/" + room;
+                location.href = "/r/" + room + "?file=" + fileUploadName;
             }
         });
     });
     $("#button2").on('click', function() {
-        console.log("Button 2 was clicked!");
         location.href = "/room";
     });
     $(".learnbutton").on('click', function() {
-        console.log("Learn button was clicked!");
         location.href = "/room";
     });
 })
