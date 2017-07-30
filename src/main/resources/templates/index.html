@@ -6,6 +6,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> </link>
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- velocity -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
+
     <!-- paths -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"></link>
@@ -39,21 +42,32 @@
 
         <!-- header -->
         <div class="discussion-header">
-            <div class="discussion-name padding-left" > Discussion </div>
-            <div class="slide-info padding-right"> Slide 1 </div>
+            <div class="discussion-name padding-left" > THREADS </div>
+            <div class="slide-info padding-right"> SLIDE 1 </div>
         </div>
 
         <!-- content -->
         <div id="discussion-content">
 
         </div>
-
         <!-- chat -->
-        <div class="container-color chat-container"> </div>
-        <div class="chat-container layer-1">
-            <input id="chat-input" type="text" placeholder="..."> </input>
-            <input id="chat-post" type="submit" value="post" > </input>
+        <!--<div class="container-color chat-container"> </div>-->
+        <div id="post-container" class="post-container layer-1">
+            <!--<input id="chat-input" type="text" placeholder="..."> </input>-->
+            <!--<input id="chat-post" type="submit" value="post" > </input>-->
+            <!-- post toggle -->
+            <!--<div id="post-toggle" class="open-button full-width-center">-->
+                <!--<div id="plus-sign"> + </div>-->
+            <!--</div>-->
+            <div id="form-title" > ASK A QUESTION </div>
+            <div id="post-form">
+                <input id="post-subject" type="text" placeholder="topic of inquiry..."> </input>
+                <input id="post-content" type="text" placeholder="..."> </input>
+                <input id="chat-post" type="submit" value="post"> </input>
+            </div>
         </div>
+        <!-- form -->
+
     </div>
 
     <div class="notes">
