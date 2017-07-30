@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="lecture-hub:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="lecture-hub.war">
-      <element id="artifact" artifact-name="lecture-hub:war exploded" />
-    </root>
-  </artifact>
-</component>
