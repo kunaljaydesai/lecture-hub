@@ -14,10 +14,18 @@ import util.Database;
 @Controller
 public class InterfaceHandler {
 
+    @RequestMapping("/")
+    public ModelAndView getHome() {
+        Application.logger.debug("Accessed home view...");
+        return new ModelAndView("home");
+    }
+
+
     @RequestMapping("/r/{roomId}")
     public ModelAndView getRoom(@PathVariable String roomId) {
         Application.logger.debug("Accessing room " + roomId + "...");
         Room r = Database.getRoom(new Room(roomId));
+        Application.logger.debug("Room is " + r.toString());
         if (r == null) {
             Application.logger.debug("Couldn't find room " + roomId);
             return new ModelAndView("error");
