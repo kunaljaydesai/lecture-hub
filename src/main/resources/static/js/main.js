@@ -179,8 +179,8 @@ function formHandler() {
                     notify("please enter subject and subject before posting!");
                     return;
                 }
-               fakeThread();
-                // sendMessage(AUTHOR, SUBJECT, MESSAGE, ROOMID, SLIDENUM);
+//               fakeThread();
+                 sendMessage(AUTHOR, SUBJECT, MESSAGE, ROOMID, SLIDENUM);
 //                formOut();
 //                $("#plus-sign").css("display", "block");
                 $("#post-content").val("");
@@ -197,6 +197,7 @@ function sendMessage(author, subject, message, roomId, slideNum) {
                 'author' : author,
                 'room' : roomId,
                 'slide' : slideNum,
+                'subject': subject
             },
             success: function() {
                 console.log("Succesfully sent message");
