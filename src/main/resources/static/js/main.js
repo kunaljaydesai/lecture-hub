@@ -4,6 +4,7 @@ var ROOMID;
 var OPTIONS = [];
 var optionsVal = {};
 var progressBars = [];
+var progressExists = false;
 
 $(function() {
     ROOMID = $("#info").data("channel");
@@ -25,6 +26,7 @@ $(function() {
 
     formHandler();
     threadHandler();
+    handleQuiz();
 
 });
 
@@ -32,16 +34,21 @@ function init() {
     console.log("INIT METHOD RAN");
     $("#quiz-stats-button").on('click', function() {
         $("#instructor-quiz-stats").modal('show');
-        $(".container-bar").each(function() {
+        if (!progressExists) {
+            $(".container-bar").each(function() {
 
-            totalOptionsVal = 0;
-            for (var i = 0; i < optionsVal.length; i++) {
-                totalOptionsVal += optionsVal[i];
-            }
-            var appendDestination = ".progress#" + $(this).attr('id');
-            var bar = new ProgressBar.Line(appendDestination, {easing: 'easeInOut'});
-            bar.animate(optionsVal[$(this).attr('id')] / totalOptionsVal);
-        });
+                        totalOptionsVal = 0;
+                        for (var i = 0; i < optionsVal.length; i++) {
+                            totalOptionsVal += optionsVal[i];
+                        }
+                        var appendDestination = ".progress#" + $(this).attr('id');
+                        var bar = new ProgressBar.Line(appendDestination, {easing: 'easeInOut'});
+                        bar.animate(0.25);
+//                        bar.animate(optionsVal[$(this).attr('id')] / totalOptionsVal);
+                    });
+            progressExists = true;
+        }
+
 
 
     });
@@ -58,6 +65,9 @@ function init() {
     });
 
     $("#publish-quiz").on('click', function() {
+        console.log("OLD OPTIONS: " + OPTIONS);
+        OPTIONS = [];
+        console.log("NEW OPTIONS: " + OPTIONS);
         $('.option-labels').each(function () {
             OPTIONS.push($(this).text());
         }).promise().done(function() {
@@ -70,8 +80,11 @@ function init() {
                     'question' : question,
                 },
                 success : function(data) {
+                    progressExists = false;
                     console.log("Quiz succesfully published");
                     $("#instructor-quiz-stats .content").empty();
+                    $("#empty").empty();
+
                     $("#instructor-quiz-stats .content").append("<h2>Question</h2>" + "<p>" + question + "</p>");
                     $("#instructor-quiz-stats .content").append("<h2>Options</h2>");
                     for (var i = 0; i < OPTIONS.length; i++) {
@@ -86,6 +99,47 @@ function init() {
     });
 
 
+}
+
+function handleQuiz() {
+    $("#quiz-submit").bind({
+        click: function() {
+            var response = null;
+            for (var input in $("#quiz-box").children(".quiz-select")) {
+                if (input.checked) {
+                    response = input.id;
+                }
+            }
+            if (response) {
+                sendQuiz(AUTHOR, response);
+            }
+        }
+    });
+    $("input.quiz-select").bind({
+        change: function(evt) {
+            if ($(this).siblings(':checked').length) {
+               this.checked = false;
+            }
+        }
+    });
+}
+
+
+
+function sendQuiz(author, response) {
+    $.ajax({
+        url : '/api/chat/addMessage',
+        data : {
+            'author' : author,
+            'response' : response,
+        },
+        success: function() {
+            console.log("Succesfully sent message");
+        },
+        fail: function() {
+            console.log("Failed to send");
+        }
+    });
 }
 
 
