@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" > </meta>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> </link>
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- paths -->
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="../../css/style.css"/>
+    <script type="text/javascript" src="../../js/main.js"> </script>
+
+</head>
+<body>
+    <div class="header layer-1">
+        <div class="logo">
+            lecture-hub
+        </div>
+    </div>
+    <div class="main-view layer-2">
+        <div class="slide-show">
+            <div data-index="0" class="slide-container">
+                <img class="slide" src="../../img/demo-slide.jpg"> </img>
+            </div>
+            <div data-index="1" class="slide-container">
+                <img class="slide"> </img>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide-nav underHeader layer-1"> </div>
+
+    <div class="discussion-container underHeader layer-1">
+
+        <!-- header -->
+        <div class="discussion-header">
+            <div class="discussion-name padding-left" > Discussion </div>
+            <div class="slide-info padding-right"> Slide 1 </div>
+        </div>
+
+        <!-- content -->
+        <div class="discussion-content">
+
+        </div>
+
+        <!-- chat -->
+        <div class="container-color chat-container"> </div>
+        <div class="chat-container layer-1">
+            <input id="chat-input" type="text" placeholder="have a burning question?" > </input>
+            <!-- <form id="chat-main">  -->
+
+            <input id="chat-enter" type="submit" style="display:none;"> </input>
+            <!-- </form> -->
+        </div>
+    </div>
+
+
+</body>
+</html>

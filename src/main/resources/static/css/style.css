@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+
+.layer-1 {
+    z-index: 100;
+}
+
+.layer-2 {
+    z-index: 90;
+}
+
+.layer-3 {
+    z-index: 80;
+}
+
+/*******************************************************/
+/*   header  */
+/*******************************************************/
+
+
+.header {
+    width: 100vw;
+    height: 60px;
+    background: #031D4A;
+}
+
+.logo {
+    color: white;
+}
+
+
+/*******************************************************/
+/*   helper classes */
+/*******************************************************/
+
+.underHeader {
+    height: calc(100vh - 60px);
+}
+
+
+/*******************************************************/
+/*   slides   */
+/*******************************************************/
+
+
+.slide-show {
+    background: #F0F3F4;
+    position: relative;
+    float: right;
+    height: 100vh;
+    width: 70vw;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.slide-container {
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+    position: relative;
+    background: transparent;
+}
+
+.slide {
+    max-width: calc(100% - 30px);
+    max-height: calc(100% - 30px);
+    box-shadow: 4px 4px 10px #D0D0D0;
+}
+
+.slide-nav {
+    position: fixed;
+    right: -30vw;
+    width: 30vw;
+}
+
+
+/*******************************************************/
+/*   discussion panel  */
+/*******************************************************/
+
+.discussion-container {
+    top: 60px;
+    left: 0;
+    width: 30vw;
+    position: fixed;
+}
+
+.discussion-header {
+    top: 0;
+    position: relative;
+    height: 50px;
+    width: 100%;
+    background: #FA8500;
+    line-height: 50px;
+    vertical-align: middle;
+}
+
+.discussion-name {
+    position: relative;
+    display: inline-block;
+    /*height: 100%;*/
+    /*line-height: 100%;*/
+    /*vertical-align: middle;*/
+    left: 15px;
+}
+
+.slide-info {
+    display: inline-block;
+    /*position: relative;
+    float: right;*/
+    position: absolute;
+    right: 15px;
+}
+
+.discussion-content {
+    position: relative;
+    overflow-y: scroll;
+    width: 100%;
+
+}
+
+/*******************************************************/
+/*   chat container  */
+/*******************************************************/
+
+.chat-container {
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 2px);
+    height: 70px;
+    border: 1px solid #F0F3F4;
+}
+
+.container-color {
+    /*background: black;*/
+    opacity: 0.3;
+}
+
+
+/* calc width: (100vw - slide-info width) */
+#chat-main {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    height: 100%;
+
+    vertical-align: middle;
+}
+
+#chat-input {
+    position: relative;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: calc(100% - 20px);
+    /*width: 100%;*/
+    /*height: 50%;*/
+}
+
+input[type=text] {
+    /*width: 100%;*/
+    border: 0px;
+
+}
+
+input[type=text], select {
+    border: 0px;
+    outline: none;
+}
