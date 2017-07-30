@@ -7,7 +7,7 @@
   <name>lecture-hub Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
@@ -65,6 +65,14 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
+    <plugin>
+        <groupId>com.heroku.sdk</groupId>
+        <artifactId>heroku-maven-plugin</artifactId>
+        <version>1.2.0</version>
+        <configuration>
+            <mainClass>util.Application</mainClass>
+        </configuration>
+    </plugin>
     </plugins>
     <finalName>lecture-hub</finalName>
   </build>
